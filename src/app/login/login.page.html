@@ -1,49 +1,72 @@
+
 <ion-header>
-  <ion-toolbar>
-    
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
+ 
 </ion-header>
 
+ 
+
 <ion-content>
-  
+
+    
   <form [formGroup]="formGroup">
   <ion-list lines="full" class="ion-no-margin">
-
-    <ion-list-header lines="full">
-
-
-    </ion-list-header>
-    <ion-label>
-
-      <p *ngIf="formGroup.controls.username.errors && formGroup.controls.username.dirty">E-mail Inválido</p>
-    </ion-label>  
-    <ion-label>
-
-      <p *ngIf="formGroup.controls.password.errors && formGroup.controls.password.dirty">Senha Inválida</p>
-    </ion-label>  
+   
+  
+    
+    
+    
 
 
+    <ion-card>
+      <ion-card-content>
+        
+        <h1 class="ion-text-center">Entre ou Cadastre-se.</h1>
+    <ion-item >
 
-    <ion-item>
-
-      <ion-label position="floating" color="success">E-mail</ion-label>
+      <ion-label position="floating" color="medium">E-mail</ion-label>
 
       <ion-input type="email" formControlName="username"></ion-input>
      
 
     </ion-item>
 
-    <ion-item>
+    <ion-item id="input">
 
-      <ion-label position="floating" color="success">Senha</ion-label>
+      <ion-label position="floating" color="medium">Senha</ion-label>
 
       <ion-input type="password" formControlName="password"></ion-input>
 
     </ion-item>
+    <ion-grid class="ion-text-center">
+
+      <ion-row>
+        <ion-col>
+          <div>    <ion-button color="medium"  expand="block"><ion-icon name="person-add"></ion-icon></ion-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>    <ion-button color="medium" expand="block" (click)="logar()" [disabled]="formGroup.invalid"><ion-icon name="arrow-forward"></ion-icon></ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+  
+  </ion-grid>
+    <div>
+    <ion-label color="danger">
+
+      <p class="ion-text-center" *ngIf="formGroup.controls.username.errors && formGroup.controls.username.dirty">*E-mail Inválido</p>
+
+    </ion-label> 
+    <ion-label color="danger">
+
+      <p class="ion-text-center" *ngIf="formGroup.controls.password.errors && formGroup.controls.password.dirty">*Senha Inválida</p>
+    </ion-label>  
+  </div>
+  </ion-card-content>
+</ion-card>
 
   </ion-list>
-  <ion-button color="success" expand="block" (click)="logar()" [disabled]="formGroup.invalid">Entrar</ion-button>
 
   
 </form>
