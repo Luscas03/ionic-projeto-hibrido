@@ -39,6 +39,9 @@ this.navCtrl.navigateRoot(['/home']);
 
 
 }
+cadastrar(){
+  this.navCtrl.navigateRoot(['/cadastrar']);
+}
 iniciarForm(){
 this.formGroup = this.formB.group({
 username : ['',[Validators.required, Validators.email]],

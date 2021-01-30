@@ -41,11 +41,11 @@
 
       <ion-row>
         <ion-col>
-          <div>    <ion-button color="medium"  expand="block"><ion-icon name="person-add"></ion-icon></ion-button>
+          <div>    <ion-button color="medium"  expand="block" (click)="cadastrar()"><ion-icon name="person-add"></ion-icon></ion-button>
           </div>
         </ion-col>
         <ion-col>
-          <div>    <ion-button color="medium" expand="block" (click)="logar()" [disabled]="formGroup.invalid"><ion-icon name="arrow-forward"></ion-icon></ion-button>
+          <div>    <ion-button color="medium" expand="block" (click)="logar()" [disabled]="formGroup.invalid"> <ion-icon name="caret-forward-outline"></ion-icon></ion-button>
           </div>
         </ion-col>
       </ion-row>
