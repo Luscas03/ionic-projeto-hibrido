@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Sair',
-      url: '/login',
+      url: '/sair',
       icon: 'log-out'
     }
   ];
@@ -42,13 +42,15 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
     });
   }
-
+  
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    
   }
 }

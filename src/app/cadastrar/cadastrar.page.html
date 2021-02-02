@@ -17,23 +17,23 @@
   <ion-item>
     <ion-label position="floating" color="medium">Nome</ion-label>
     <ion-input type="text" formControlName="name"></ion-input>
-  </ion-item>
+  </ion-item> 
   <ion-item>
     <ion-label position="floating" color="medium">E-mail</ion-label>
     <ion-input type="email"formControlName="username"></ion-input>
   </ion-item>
-  <ion-item>
+ <ion-item>
     <ion-label position="floating" color="medium">Telefone</ion-label>
     <ion-input type="number" formControlName="tel"></ion-input>
-  </ion-item>
+  </ion-item> 
   <ion-item>
     <ion-label position="floating" color="medium">Senha</ion-label>
     <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
-  <ion-item>
+ <ion-item>
     <ion-label position="floating" color="medium">Confirmação de Senha</ion-label>
     <ion-input type="password"></ion-input>
-  </ion-item>
+  </ion-item> 
 
   <ion-label color="danger" class="ion-text-center">
     <p *ngIf="formGroup.controls.name.errors && formGroup.controls.name.dirty"> *Nome Inválido</p>
