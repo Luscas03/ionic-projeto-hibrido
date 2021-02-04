@@ -44,7 +44,7 @@ export class ClienteCadastroPage implements OnInit {
   }
   cancelar() {
     this.navCtrl.navigateBack(['/home']);
-
+ 
   }
   iniciarForm() {
     this.formGroup = this.formB.group({

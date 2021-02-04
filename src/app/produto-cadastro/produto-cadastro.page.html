@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Cadastrar Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="formGroup">
+  <ion-card>
+
+    <ion-card-content>
+  <ion-item>
+  <ion-label position="floating" color="medium">Nome do Produto</ion-label>
+    <ion-input type="text" formControlName="nomeproduto"></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label position="floating" color="medium">Tipo</ion-label>
+      <ion-input type="text" formControlName="tipo"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-label position="floating" color="medium">Preço</ion-label>
+        <ion-input type="text" formControlName="preco"></ion-input>
+      </ion-item>  
+      <ion-item>
+        <ion-label position="floating" color="medium">Descrição</ion-label>
+          <ion-input type="text" formControlName="descricao"></ion-input>
+        </ion-item>  
+ 
+          <ion-item>
+            <ion-label position="floating" color="medium">Quantidade</ion-label>
+              <ion-input type="text" formControlName="quantidade"></ion-input>
+            </ion-item>
+          
+ <ion-label color="danger" class="ion-text-center">
+   <p *ngIf="formGroup.controls.nomeproduto.errors && formGroup.controls.nomeproduto.dirty"> *Nome Inválido</p> 
+  <p *ngIf="formGroup.controls.tipo.errors && formGroup.controls.tipo.dirty"> *Tipo Inválido</p>
+  <p *ngIf="formGroup.controls.preco.errors && formGroup.controls.preco.dirty"> *Preço Inválido</p> 
+  <p *ngIf="formGroup.controls.descricao.errors && formGroup.controls.descricao.dirty"> *Descrição Inválida</p>
+  <p *ngIf="formGroup.controls.quantidade.errors && formGroup.controls.quantidade.dirty"> *Quantidade Inválida</p>
+ 
+
+
+  </ion-label> 
+  </ion-card-content>
+  <ion-grid class="ion-text-center">
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)="cancelar()"><ion-icon name="backspace-outline"></ion-icon>
+        </ion-button> 
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)= "cadastrar()" [disabled]= "formGroup.invalid"> <ion-icon name="caret-forward-outline"></ion-icon></ion-button> 
+      </ion-col>
+    </ion-row>
+
+
+
+</ion-grid>
+  </ion-card>
+</form>
+</ion-content>
