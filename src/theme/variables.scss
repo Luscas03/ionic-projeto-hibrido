@@ -192,8 +192,9 @@
    * -------------------------------------------
    */
 
-  .md body[color-theme = "dark"] {
-    --ion-background-color: #121212;
+  .md body {
+    --ion-background-color: rgb(74,93,103);
+    --ion-background-color: radial-gradient(circle, rgba(74,93,103,1) 0%, rgba(77,48,131,1) 100%);
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
