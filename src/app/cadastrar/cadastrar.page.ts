@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuController, NavController } from '@ionic/angular';
+import { TemplateService } from '../service/template.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -15,7 +16,8 @@ export class CadastrarPage implements OnInit {
   private formB : FormBuilder,
   private navCtrl : NavController,
   private auth : AngularFireAuth, 
-  private menuCtrl : MenuController
+  private menuCtrl : MenuController,
+  private template : TemplateService
     ) {
      
 
@@ -29,16 +31,23 @@ export class CadastrarPage implements OnInit {
     
   }
   cadastrar(){
+this.template.loading.then(load =>{
+  
+
+
+  load.present();
     let user = this.formGroup.controls['username'].value;
     let password = this.formGroup.controls['password'].value;
     this.auth.createUserWithEmailAndPassword(user,password).then(data=>{
+      load.dismiss();
       this.navCtrl.navigateRoot(['/login']);
     }).catch(err=>{
-      console.log("Cadastro incorreto!");
+      load.dismiss();
+ this.template.myAlert("Conta Existente")
     })
     
     
-    
+  })
   }
   cancelar(){
     this.navCtrl.navigateBack(['/login']);
@@ -46,9 +55,9 @@ export class CadastrarPage implements OnInit {
   iniciarForm(){
 
 this.formGroup = this.formB.group ({
-  name :['', [Validators.required, Validators.minLength(3)]],
+  // name :['', [Validators.required, Validators.minLength(3)]],
    username : ['', [Validators.required, Validators.email]],
- tel : ['', [Validators.required, Validators.pattern(new RegExp("[0-9 ]{11}"))]],
+//  tel : ['', [Validators.required, Validators.pattern(new RegExp("[0-9 ]{11}"))]],
   password : ['', [Validators.required, Validators.minLength(8)]]
 })
 

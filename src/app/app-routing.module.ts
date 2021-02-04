@@ -39,6 +39,14 @@ const routes: Routes = [
     loadChildren: () => import('./sair/sair.module').then( m => m.SairPageModule),
     canActivate : [AngularFireAuthGuard],
     data : { authGuardPipe : redirectToLogin}
+  },
+  {
+    path: 'cliente-cadastro',
+    loadChildren: () => import('./cliente-cadastro/cliente-cadastro.module').then( m => m.ClienteCadastroPageModule)
+  },
+  {
+    path: 'cliente-lista',
+    loadChildren: () => import('./cliente-lista/cliente-lista.module').then( m => m.ClienteListaPageModule)
   }
 ];
 
