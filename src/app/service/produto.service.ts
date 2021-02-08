@@ -48,6 +48,19 @@ listaDeProdutos() : Observable<any>{
         })
 }))
 }
+buscaPorId(id : any): Observable<any>{
+    return from(new Observable(observe=>{
+
+        this.firestore.collection('produto').doc(id).snapshotChanges().subscribe(response=>{
+ //converter o response em objetos produto
+ let data = response.payload.data();
+ let id = response.payload.id;
+ let produto : Produto = new Produto();
+ produto.setData(id,data);
 
 
+        })
+
+    }))
+}
 }

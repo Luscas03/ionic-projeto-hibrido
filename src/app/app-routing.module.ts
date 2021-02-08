@@ -72,6 +72,14 @@ const routes: Routes = [
   {
     path: 'cliente-atualizar/:id',
     loadChildren: () => import('./cliente-atualizar/cliente-atualizar.module').then( m => m.ClienteAtualizarPageModule)
+  },
+  {
+    path: 'cliente-remove/:id',
+    loadChildren: () => import('./cliente-remove/cliente-remove.module').then( m => m.ClienteRemovePageModule)
+  },
+  {
+    path: 'login-recuperar',
+    loadChildren: () => import('./login-recuperar/login-recuperar.module').then( m => m.LoginRecuperarPageModule)
   }
 ];
 
