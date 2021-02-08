@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { from, Observable } from "rxjs";
-import { Cliente } from "../model/cliente";
+import { Cliente } from '../model/cliente';
 
 
 
@@ -56,6 +56,54 @@ constructor(private firestore : AngularFirestore){}
 
 
     }
+    buscarPorId(id : any): Observable<any>{
+
+        return from(new Observable(observe=>{ // Converte para Observable
 
 
+
+            this.firestore.collection('cliente').doc(id).snapshotChanges().subscribe(response=>{
+
+                
+
+                let data = response.payload.data();
+
+                let id = response.payload.id;
+
+
+
+                // dados do cliente no objeto CLiente
+
+                let cliente : Cliente = new Cliente();
+
+                cliente.setData(id,data);
+
+
+
+                observe.next(cliente);
+
+            },err=>{
+
+                observe.next(null);
+
+            })
+
+
+
+        }))
+
+    }
+    atualizar(id : any, dados : any): Observable<any>{
+        return from(new Observable(observe=>{
+
+            this.firestore.collection('cliente').doc(id).set(dados).then(response=>{
+observe.next("Atualizado com Sucesso!")
+                
+
+            }),err =>{
+                observe.next("Erro ao Atualizar")
+            }
+
+        }))
+    }
 }

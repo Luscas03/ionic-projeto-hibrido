@@ -55,6 +55,23 @@ const routes: Routes = [
   {
     path: 'produto-lista',
     loadChildren: () => import('./produto-lista/produto-lista.module').then( m => m.ProdutoListaPageModule)
+  },
+  {
+    path: 'cliente-visualizar',
+    loadChildren: () => import('./cliente-visualizar/cliente-visualizar.module').then( m => m.ClienteVisualizarPageModule)
+  },
+  {
+    path: 'cliente-visualizar/:id',
+    loadChildren: () => import('./cliente-visualizar/cliente-visualizar.module').then( m => m.ClienteVisualizarPageModule)
+  },
+  
+  {
+    path: 'cliente-atualizar',
+    loadChildren: () => import('./cliente-atualizar/cliente-atualizar.module').then( m => m.ClienteAtualizarPageModule)
+  },
+  {
+    path: 'cliente-atualizar/:id',
+    loadChildren: () => import('./cliente-atualizar/cliente-atualizar.module').then( m => m.ClienteAtualizarPageModule)
   }
 ];
 

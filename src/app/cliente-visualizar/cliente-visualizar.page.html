@@ -1,0 +1,131 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    
+
+    <ion-title>Visualizar Cliente</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+
+
+  <form [formGroup]="formGroup">
+
+
+
+  <ion-list lines="full" class="ion-no-margin">
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Nome</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="nome"></ion-input>
+
+      <p *ngIf="formGroup.controls.nome.errors && formGroup.controls.nome.dirty">Nome Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">CPF</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="cpf"></ion-input>
+
+      <p *ngIf="formGroup.controls.cpf.errors && formGroup.controls.cpf.dirty">CPF Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Cidade</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="cidade"></ion-input>
+
+      <p *ngIf="formGroup.controls.cidade.errors && formGroup.controls.cidade.dirty">Cidade Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Endereço</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="endereco"></ion-input>
+
+      <p *ngIf="formGroup.controls.endereco.errors && formGroup.controls.endereco.dirty">Endereço Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Número</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="numero"></ion-input>
+
+      <p *ngIf="formGroup.controls.numero.errors && formGroup.controls.numero.dirty">Número Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Estado</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="estado"></ion-input>
+
+      <p *ngIf="formGroup.controls.estado.errors && formGroup.controls.estado.dirty">Estado Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Email</ion-label>
+
+      <ion-input type="text" disabled="true" formControlName="email"></ion-input>
+
+      <p *ngIf="formGroup.controls.email.errors && formGroup.controls.email.dirty">E-mail Inválido</p>
+
+    </ion-item>
+
+
+
+    <ion-item>
+
+      <ion-label position="floating">Telefone</ion-label>
+
+      <ion-input type="text" disabled="true"  formControlName="telefone"></ion-input>
+
+      <p *ngIf="formGroup.controls.telefone.errors && formGroup.controls.telefone.dirty">Telefones Inválido</p>
+
+    </ion-item>
+
+
+
+  </ion-list>
+
+
+
+  <ion-button color="primary" expand="full" (click)="atualizar()" [disabled]="formGroup.invalid">Atualizar</ion-button>
+
+  </form>
+
+</ion-content>
