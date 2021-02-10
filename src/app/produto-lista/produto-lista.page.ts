@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/produto';
 import { ProdutoService } from '../service/produto.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-produto-lista',
@@ -11,7 +12,9 @@ export class ProdutoListaPage implements OnInit {
 
 lista : Produto[] = [];
 
-  constructor(private produtoServ : ProdutoService) { }
+  constructor(private produtoServ : ProdutoService,
+  private navCtrl : NavController
+    ) { }
 
   ngOnInit() {
     this.produtoServ.listaDeProdutos().subscribe(response=>{
@@ -20,5 +23,7 @@ lista : Produto[] = [];
 
     })
   }
-
+visualizar(produto){
+this.navCtrl.navigateForward(["/produto-visualizar", produto.id]);
+}
 }

@@ -48,7 +48,7 @@ listaDeProdutos() : Observable<any>{
         })
 }))
 }
-buscaPorId(id : any): Observable<any>{
+buscarPorId(id : any): Observable<any>{
     return from(new Observable(observe=>{
 
         this.firestore.collection('produto').doc(id).snapshotChanges().subscribe(response=>{
@@ -59,8 +59,48 @@ buscaPorId(id : any): Observable<any>{
  produto.setData(id,data);
 
 
+ observe.next(produto);
+
+        },err=>{
+observe.next(null);
+
         })
 
     }))
 }
+atualizar(id : any, dados : any): Observable<any>{
+    return from(new Observable(observe=>{
+    
+        this.firestore.collection('produto').doc(id).set(dados).then(response=>{
+
+            observe.next("Atualizado com Sucesso!");
+
+        }, err=>{
+
+
+            observe.next("Erro ao Atualizar!");
+
+        })
+
+    }))
+
+}
+
+excluir(id : any): Observable<any>{
+    return from(new Observable(observe=>{
+        this.firestore.collection('produto').doc(id).delete().then(response=>{
+
+            observe.next("Excluído com Sucesso!");
+
+        }, err=>{
+
+
+            observe.next("Erro ao Excluir!");
+
+        })
+    
+    }))    
+}
+
+
 }

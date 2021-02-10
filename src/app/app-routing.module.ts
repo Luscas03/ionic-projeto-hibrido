@@ -80,7 +80,20 @@ const routes: Routes = [
   {
     path: 'login-recuperar',
     loadChildren: () => import('./login-recuperar/login-recuperar.module').then( m => m.LoginRecuperarPageModule)
+  },
+  {
+    path: 'produto-visualizar/:id',
+    loadChildren: () => import('./produto-visualizar/produto-visualizar.module').then( m => m.ProdutoVisualizarPageModule)
+  },
+  {
+    path: 'produto-atualizar/:id',
+    loadChildren: () => import('./produto-atualizar/produto-atualizar.module').then( m => m.ProdutoAtualizarPageModule)
+  },
+  {
+    path: 'produto-remove/:id',
+    loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
   }
+ 
 ];
 
 @NgModule({

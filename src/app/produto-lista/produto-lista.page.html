@@ -17,7 +17,7 @@
     <ion-item *ngFor= "let produto of lista"> 
 
       <ion-label>{{produto.nomeproduto}}</ion-label>
-      <ion-button>Visualizar</ion-button>
+      <ion-button (click)="visualizar(produto)" color="medium">Visualizar</ion-button>
     </ion-item>
 
   </ion-list>
