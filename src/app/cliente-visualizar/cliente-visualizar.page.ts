@@ -109,5 +109,13 @@ formGroup : FormGroup;
     
 
   }
+  remover(){
+    
 
+    this.navCtrl.navigateForward(['/cliente-remove', this.cliente.id]);
+  
+ 
+  
+
+}
 }

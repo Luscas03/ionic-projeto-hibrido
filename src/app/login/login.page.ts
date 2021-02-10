@@ -71,5 +71,9 @@ export class LoginPage implements OnInit {
   paginaCadastro() {
     this.navCtrl.navigateForward(['/cadastrar']);
   }
+  recuperarSenha() {
+    this.navCtrl.navigateForward(['/login-recuperar']);
+  }
+
 
 }

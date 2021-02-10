@@ -106,4 +106,18 @@ observe.next("Atualizado com Sucesso!")
 
         }))
     }
+excluir(id : any) : Observable<any>{
+    return from(new Observable(observe=>{
+        this.firestore.collection('cliente').doc(id).delete().then(response=>{
+            observe.next("Atualizado com Sucesso!")
+                            
+            
+                        }),err =>{
+                            observe.next("Erro ao Atualizar")
+                        }
+    
+    
+    }))
+    }
+
 }
