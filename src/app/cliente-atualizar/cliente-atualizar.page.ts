@@ -67,7 +67,7 @@ export class ClienteAtualizarPage implements OnInit {
     })
 
   }
-
+ 
 
 
   iniciarForm() {
@@ -106,6 +106,7 @@ this.clienteServ.atualizar(this.cliente.id, this.formGroup.value).subscribe(resp
 
 load.dismiss();
 this.template.myAlert(response);
+this.navCtrl.navigateRoot(['/cliente-lista']);
 },err=> {
  load.dismiss();
  this.template.myAlert(err);

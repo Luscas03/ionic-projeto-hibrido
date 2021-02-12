@@ -9,7 +9,7 @@
 
       </ion-buttons>
 
-    <ion-title>Atualizar Cliente</ion-title>
+    <ion-title class="ion-text-center">Atualizar Cliente</ion-title>
 
   </ion-toolbar>
 
@@ -25,7 +25,9 @@
 
 
 
-  <ion-list lines="full" class="ion-no-margin">
+
+    <ion-card>
+      <ion-card-content>
 
 
 
@@ -124,12 +126,14 @@
     </ion-item>
 
 
+    <ion-button color="primary" expand="full" (click)="atualizar()" [disabled]="formGroup.invalid"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
 
-  </ion-list>
+  </ion-card-content>
+</ion-card>
 
 
 
-  <ion-button color="primary" expand="full" (click)="atualizar()" [disabled]="formGroup.invalid">Atualizar</ion-button>
+
 
   </form>
 
