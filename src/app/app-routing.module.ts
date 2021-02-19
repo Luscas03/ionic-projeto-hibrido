@@ -92,9 +92,6 @@ const routes: Routes = [
   {
     path: 'produto-remove/:id',
     loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
-  },  {
-    path: 'cliente-teste',
-    loadChildren: () => import('./cliente-teste/cliente-teste.module').then( m => m.ClienteTestePageModule)
   }
 
  
