@@ -8,7 +8,7 @@
       </ion-buttons>
     
 
-    <ion-title>Visualizar Cliente</ion-title>
+    <ion-title class="ion-text-center">Visualizar Cliente</ion-title>
 
   </ion-toolbar>
 
@@ -24,11 +24,14 @@
 
 
 
-  <ion-list lines="full" class="ion-no-margin">
 
 
 
-    <ion-item>
+    <ion-card>
+      <ion-card-content>
+
+  
+        <ion-item>
 
       <ion-label position="floating">Nome</ion-label>
 
@@ -122,14 +125,26 @@
 
     </ion-item>
 
+    <ion-grid class="ion-text-center">
+
+      <ion-row>
+        <ion-col>
+          <ion-button color="danger" expand="full" (click)="remover()" [disabled]="formGroup.invalid">Excluir</ion-button>
+
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" expand="full" (click)="atualizar()" [disabled]="formGroup.invalid">Editar</ion-button>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card-content>
+</ion-card>
 
 
-  </ion-list>
 
 
-
-  <ion-button color="primary" expand="full" (click)="atualizar()" [disabled]="formGroup.invalid">Atualizar</ion-button>
-  <ion-button color="danger" expand="full" (click)="remover()" [disabled]="formGroup.invalid">Excluir</ion-button>
 
   </form> 
 
