@@ -11,5 +11,7 @@ export class ClienteTestePage implements OnInit {
 
   ngOnInit() {
   }
-
+entrar(){
+  
+}
 }
