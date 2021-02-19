@@ -153,7 +153,7 @@
    */
 
   .ios body{
-    --ion-background-color: #000000;
+    --ion-background-color: #ffffff;
     --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;
@@ -193,9 +193,10 @@
    */
 
   .md body {
-    --ion-background-color: rgb(74,93,103);
-    --ion-background-color: radial-gradient(circle, rgba(74,93,103,1) 0%, rgba(77,48,131,1) 100%);
-    --ion-background-color-rgb: 18,18,18;
+    --ion-background-color: rgb(255, 255, 255);
+    // --ion-background-color: radial-gradient(circle, rgba(74,93,103,1) 0%, rgba(77,48,131,1) 100%);
+   // --ion-background-color-rgb: 18,18,18;
+   --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255,255,255;
