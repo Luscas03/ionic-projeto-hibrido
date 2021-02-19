@@ -93,6 +93,7 @@ const routes: Routes = [
     path: 'produto-remove/:id',
     loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
   }
+
  
 ];
 
