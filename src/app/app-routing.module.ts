@@ -109,6 +109,10 @@ const routes: Routes = [
     path: 'dieta-low-carb',
     loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
   },
+  {
+    path: 'refeicao-user',
+    loadChildren: () => import('./refeicao-user/refeicao-user.module').then( m => m.RefeicaoUserPageModule)
+  },
   
 ];
 
