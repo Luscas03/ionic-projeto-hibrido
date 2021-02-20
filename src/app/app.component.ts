@@ -44,6 +44,11 @@ export class AppComponent implements OnInit {
       icon: 'list-circle'
     },
     {
+      title: 'Dietas e Refeições',
+      url: '/dietas-refeicoes',
+      icon: 'happy'
+    },
+    {
       title: 'Sair',
       url: '/sair',
       icon: 'log-out'

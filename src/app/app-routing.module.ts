@@ -93,8 +93,23 @@ const routes: Routes = [
     path: 'produto-remove/:id',
     loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
   },
+  {
+    path: 'dietas-refeicoes',
+    loadChildren: () => import('./dietas-refeicoes/dietas-refeicoes.module').then( m => m.DietasRefeicoesPageModule)
+  },
+  {
+    path: 'dieta-user',
+    loadChildren: () => import('./dieta-user/dieta-user.module').then( m => m.DietaUserPageModule)
+  },
+  {
+    path: 'dieta-cetogenica',
+    loadChildren: () => import('./dieta-cetogenica/dieta-cetogenica.module').then( m => m.DietaCetogenicaPageModule)
+  },
+  {
+    path: 'dieta-low-carb',
+    loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
+  },
   
- 
 ];
 
 @NgModule({
