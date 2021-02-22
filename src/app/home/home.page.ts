@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,8 @@ import { MenuController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(private menuCtrl : MenuController) { 
+  constructor(private menuCtrl : MenuController,
+    private navCtrl: NavController) { 
     this.menuCtrl.enable(true);
   
  
@@ -32,7 +33,9 @@ export class HomePage implements OnInit {
     }
     
     
-    
+    teste() {
+      this.navCtrl.navigateForward(['/marcar-consulta']);
+    }
   
   
 }

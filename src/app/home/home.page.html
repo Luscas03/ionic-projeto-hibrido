@@ -3,27 +3,43 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Home</ion-title>
+    <ion-title class="ion-text-center">Risso Saúde Integrada</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
- 
   <ion-content fullscreen class="ion-padding">
-    <ion-button expand="block" color="medium">Marcar Consulta
+    
+    <ion-card color="light">
 
-      
-      <ion-icon slot="end" size="large" name="arrow-forward-outline"></ion-icon>
-    </ion-button>
- 
-    <ion-button expand="block" color="medium">Dietas e Refeições
+      <ion-card-content>
+    <ion-card (click)="teste()"  color="medium">
 
-      <ion-icon slot="end" size="large" name="arrow-forward-outline"></ion-icon>
-    </ion-button>
+      <ion-card-content > 
+        <ion-text color="light" class="ion-text-center">
+          <h5>Marcar Consulta </h5>
+     
+        </ion-text>
+  
 
-       
+
+      </ion-card-content>
+    </ion-card>
 
     
+    <ion-card color="medium">
+
+      <ion-card-content>
+        <ion-text color="light" class="ion-text-center">
+          <h5>Montar Refeição</h5>
+        </ion-text>
+
+      </ion-card-content>
+    </ion-card>
+
+  </ion-card-content>
+</ion-card>
+
 
     
      

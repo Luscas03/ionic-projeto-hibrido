@@ -44,15 +44,16 @@ export class AppComponent implements OnInit {
       icon: 'list-circle'
     },
     {
+      title: 'Marcar Consulta',
+      url: '/marcar-consulta',
+      icon: 'add'
+    },
+    {
       title: 'Sair',
       url: '/sair',
       icon: 'log-out'
-    },
-    {
-      title: 'Marcar Consulta',
-      url: '/marcar-consulta',
-      icon: 'log-out'
     }
+
   ];
 
   constructor(
