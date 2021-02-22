@@ -47,6 +47,11 @@ export class AppComponent implements OnInit {
       title: 'Sair',
       url: '/sair',
       icon: 'log-out'
+    },
+    {
+      title: 'Marcar Consulta',
+      url: '/marcar-consulta',
+      icon: 'log-out'
     }
   ];
 

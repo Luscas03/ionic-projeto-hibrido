@@ -92,7 +92,11 @@ const routes: Routes = [
   {
     path: 'produto-remove/:id',
     loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
+  },  {
+    path: 'marcar-consulta',
+    loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
   }
+
 
  
 ];
