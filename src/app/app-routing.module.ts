@@ -92,7 +92,8 @@ const routes: Routes = [
   {
     path: 'produto-remove/:id',
     loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
-  },  {
+  },
+  {
     path: 'marcar-consulta',
     loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
   },
@@ -115,10 +116,7 @@ const routes: Routes = [
   {
     path: 'dieta-low-carb',
     loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
-  }
-
-
- 
+  },
 ];
 
 @NgModule({
