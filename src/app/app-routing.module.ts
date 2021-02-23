@@ -95,6 +95,26 @@ const routes: Routes = [
   },  {
     path: 'marcar-consulta',
     loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
+  },
+  {
+    path: 'dietas-servicos',
+    loadChildren: () => import('./dietas-servicos/dietas-servicos.module').then( m => m.DietasServicosPageModule)
+  },
+  {
+    path: 'dieta-user',
+    loadChildren: () => import('./dieta-user/dieta-user.module').then( m => m.DietaUserPageModule)
+  },
+  {
+    path: 'servicos-user',
+    loadChildren: () => import('./servicos-user/servicos-user.module').then( m => m.ServicosUserPageModule)
+  },
+  {
+    path: 'dieta-cetogenica',
+    loadChildren: () => import('./dieta-cetogenica/dieta-cetogenica.module').then( m => m.DietaCetogenicaPageModule)
+  },
+  {
+    path: 'dieta-low-carb',
+    loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
   }
 
 
