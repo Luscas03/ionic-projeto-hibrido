@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+   
+   <div class="ion-text-center">
+    <ion-title>Cadastrar</ion-title>
+    <ion-note color="medium">Preencha os Campos!</ion-note>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="formGroup">
+  <ion-card>
+
+    <ion-card-content>
+  <!--<ion-item>
+  <ion-label position="floating" color="medium">Nome</ion-label>
+    <ion-input type="text" formControlName="name"></ion-input>
+  </ion-item>  -->
+  <ion-item>
+    <ion-label position="floating" color="medium">E-mail</ion-label>
+    <ion-input type="email"formControlName="username"></ion-input>
+  </ion-item>
+ <!-- <ion-item>
+    <ion-label position="floating" color="medium">Telefone</ion-label>
+    <ion-input type="number" formControlName="tel"></ion-input>
+  </ion-item> -->
+  <ion-item> 
+    <ion-label position="floating" color="medium">Senha</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+ <!-- <ion-item>
+    <ion-label position="floating" color="medium">Confirmação de Senha</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>  -->
+
+  <ion-label color="danger" class="ion-text-center">
+    <!-- <p *ngIf="formGroup.controls.name.errors && formGroup.controls.name.dirty"> *Nome Inválido</p> -->
+  <p *ngIf="formGroup.controls.username.errors && formGroup.controls.username.dirty"> *E-mail Inválido</p>
+  <!-- <p *ngIf="formGroup.controls.tel.errors && formGroup.controls.tel.dirty"> *Telefone Inválido</p> -->
+  <p *ngIf="formGroup.controls.password.errors && formGroup.controls.password.dirty"> *Senha Inválida</p>
+
+  </ion-label>
+  </ion-card-content>
+  <ion-grid class="ion-text-center">
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)="cancelar()">Cancelar
+        </ion-button> 
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)= "cadastrar()" [disabled]= "formGroup.invalid">Cadastrar</ion-button> 
+      </ion-col>
+    </ion-row>
+
+
+
+</ion-grid>
+  </ion-card>
+</form>
+</ion-content>

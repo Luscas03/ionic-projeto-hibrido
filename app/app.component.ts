@@ -49,16 +49,10 @@ export class AppComponent implements OnInit {
       icon: 'add'
     },
     {
-
-      title: 'Dietas e Serviços',
-      url: '/dietas-servicos',
-      icon: 'accessibility'
-    },
-    {
       title: 'Sair',
       url: '/sair',
       icon: 'log-out'
-    },
+    }
 
   ];
 
