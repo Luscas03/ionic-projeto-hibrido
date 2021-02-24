@@ -3,20 +3,28 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-<ion-title class="ion-text-down">Faça sua escolha</ion-title>
+<ion-title class="ion-text-center">Dietas e Serviços</ion-title>
   </ion-toolbar>
 </ion-header>
   <ion-content fullscreen class="ion-padding">
-    <ion-button expand="block" color="medium" a href="/dieta-user">Dietas
+  
+
+  <ion-card color="light">
+  <ion-card-content>
+    <ion-button expand="block" color="medium" (click)="dietas()">Dietas
 
       
-      <ion-icon slot="end" size="large" name="arrow-forward-outline"></ion-icon>
+     
     </ion-button>
  
-    <ion-button expand="block" color="medium" a href="/servicos-user">Serviços
+    <ion-button expand="block" color="medium" (click)="servicos()">Serviços
 
-      <ion-icon slot="end" size="large" name="arrow-forward-outline"></ion-icon>
+      
     </ion-button>
+    
+</ion-card-content>
+</ion-card>
+     
 
  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button color="dark">

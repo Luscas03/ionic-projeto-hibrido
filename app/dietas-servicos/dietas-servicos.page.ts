@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dietas-servicos',
@@ -8,15 +7,9 @@ import { NavController } from '@ionic/angular';
 })
 export class DietasServicosPage implements OnInit {
 
-  constructor(private navCtrl : NavController) { }
+  constructor() { }
 
   ngOnInit() {
   }
-   dietas() {
-   this.navCtrl.navigateForward(['/dieta-user']);
-   }
-   servicos() {
-     this.navCtrl.navigateForward(['/servicos-user']);
-   }
 
 }
