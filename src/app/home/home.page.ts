@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
     }
     
     
-    teste() {
+    marcar() {
       this.navCtrl.navigateForward(['/marcar-consulta']);
     }
   
