@@ -50,9 +50,15 @@ export class AppComponent implements OnInit {
     },
     {
 
-      title: 'Dietas e Serviços',
-      url: '/dietas-servicos',
+      title: 'Dietas',
+      url: '/dieta-user',
       icon: 'accessibility'
+    },
+    {
+
+      title: 'Serviços',
+      url: '/servicos-user',
+      icon: 'construct'
     },
     {
       title: 'Sair',
