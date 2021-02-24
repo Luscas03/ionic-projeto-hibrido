@@ -48,10 +48,7 @@ const routes: Routes = [
     path: 'cliente-lista',
     loadChildren: () => import('./cliente-lista/cliente-lista.module').then( m => m.ClienteListaPageModule)
   },
-  {
-    path: 'produto-cadastro',
-    loadChildren: () => import('./produto-cadastro/produto-cadastro.module').then( m => m.ProdutoCadastroPageModule)
-  },
+  
   {
     path: 'produto-lista',
     loadChildren: () => import('./produto-lista/produto-lista.module').then( m => m.ProdutoListaPageModule)
@@ -116,7 +113,8 @@ const routes: Routes = [
   {
     path: 'dieta-low-carb',
     loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
-  },  {
+  },
+  {
     path: 'pratos-cadastro',
     loadChildren: () => import('./pratos-cadastro/pratos-cadastro.module').then( m => m.PratosCadastroPageModule)
   },
