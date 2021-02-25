@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dieta-user',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DietaUserPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl : NavController) { }
 
   ngOnInit() {
   }
-
+  cetogenica() {
+    this.navCtrl.navigateForward(['/dieta-cetogenica']);
+  }
+  lc() {
+    this.navCtrl.navigateForward(['/dieta-low-carb']);
+  }
 }
