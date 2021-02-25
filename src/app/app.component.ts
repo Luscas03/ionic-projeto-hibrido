@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
       icon: 'bag-handle'
     },
     {
+      title: 'Cadastro de Pratos',
+      url: '/pratos-cadastro',
+      icon: 'bag-handle'
+    },
+    {
       title: 'Lista de Produtos',
       url: '/produto-lista',
       icon: 'apps'
