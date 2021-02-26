@@ -48,7 +48,14 @@ const routes: Routes = [
     path: 'cliente-lista',
     loadChildren: () => import('./cliente-lista/cliente-lista.module').then( m => m.ClienteListaPageModule)
   },
-
+  {
+    path: 'produto-cadastro',
+    loadChildren: () => import('./produto-cadastro/produto-cadastro.module').then( m => m.ProdutoCadastroPageModule)
+  },
+  {
+    path: 'produto-lista',
+    loadChildren: () => import('./produto-lista/produto-lista.module').then( m => m.ProdutoListaPageModule)
+  },
   {
     path: 'cliente-visualizar',
     loadChildren: () => import('./cliente-visualizar/cliente-visualizar.module').then( m => m.ClienteVisualizarPageModule)
@@ -75,8 +82,24 @@ const routes: Routes = [
     loadChildren: () => import('./login-recuperar/login-recuperar.module').then( m => m.LoginRecuperarPageModule)
   },
   {
+    path: 'produto-visualizar/:id',
+    loadChildren: () => import('./produto-visualizar/produto-visualizar.module').then( m => m.ProdutoVisualizarPageModule)
+  },
+  {
+    path: 'produto-atualizar/:id',
+    loadChildren: () => import('./produto-atualizar/produto-atualizar.module').then( m => m.ProdutoAtualizarPageModule)
+  },
+  {
+    path: 'produto-remove/:id',
+    loadChildren: () => import('./produto-remove/produto-remove.module').then( m => m.ProdutoRemovePageModule)
+  },
+  {
     path: 'marcar-consulta',
     loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
+  },
+  {
+    path: 'dietas-servicos',
+    loadChildren: () => import('./dietas-servicos/dietas-servicos.module').then( m => m.DietasServicosPageModule)
   },
   {
     path: 'dieta-user',
@@ -93,10 +116,11 @@ const routes: Routes = [
   {
     path: 'dieta-low-carb',
     loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
-  }
+  },  {
+    path: 'pratos-cadastro',
+    loadChildren: () => import('./pratos-cadastro/pratos-cadastro.module').then( m => m.PratosCadastroPageModule)
+  },
 
-
- 
 ];
 
 @NgModule({

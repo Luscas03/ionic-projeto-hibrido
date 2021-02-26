@@ -24,6 +24,16 @@ export class AppComponent implements OnInit {
       icon: 'person'
     },
     {
+      title: 'Cadastro de Produtos',
+      url: '/produto-cadastro',
+      icon: 'bag-handle'
+    },
+    {
+      title: 'Lista de Produtos',
+      url: '/produto-lista',
+      icon: 'apps'
+    },
+    {
       title: 'Cadastro de Clientes',
       url: '/cliente-cadastro',
       icon: 'person-add'
@@ -40,15 +50,9 @@ export class AppComponent implements OnInit {
     },
     {
 
-      title: 'Dietas',
-      url: '/dieta-user',
+      title: 'Dietas e Serviços',
+      url: '/dietas-servicos',
       icon: 'accessibility'
-    },
-    {
-
-      title: 'Serviços',
-      url: '/servicos-user',
-      icon: 'construct'
     },
     {
       title: 'Sair',
