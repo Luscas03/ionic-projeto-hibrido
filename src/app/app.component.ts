@@ -23,22 +23,9 @@ export class AppComponent implements OnInit {
       url: '/perfil',
       icon: 'person'
     },
-    
-    {
-      title: 'Lista de Produtos',
-      url: '/produto-lista',
-      icon: 'apps'
-    },
-    {
-      title: 'Cadastro de Clientes',
-      url: '/cliente-cadastro',
-      icon: 'person-add'
-    },
-    {
-      title: 'Lista de Clientes',
-      url: '/cliente-lista',
-      icon: 'list-circle'
-    },
+
+  
+   
     {
       title: 'Marcar Consulta',
       url: '/marcar-consulta',
@@ -46,9 +33,21 @@ export class AppComponent implements OnInit {
     },
     {
 
-      title: 'Dietas e Serviços',
-      url: '/dietas-servicos',
+      title: 'Dietas',
+      url: '/dieta-user',
+      icon: 'barbell'
+    },
+    {
+
+      title: 'Serviços',
+      url: '/servicos-user',
       icon: 'accessibility'
+    },
+    {
+
+      title: 'Cadastro de Pratos',
+      url: '/pratos-cadastro',
+      icon: 'nutrition'
     },
     {
       title: 'Sair',
