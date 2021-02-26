@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Cadastrar Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="formGroup">
+  <ion-card>
+
+    <ion-card-content>
+  <ion-item>
+  <ion-label position="floating" color="medium">Nome</ion-label>
+    <ion-input type="text" formControlName="nome"></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label position="floating" color="medium">CPF</ion-label>
+      <ion-input type="text" formControlName="cpf"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-label position="floating" color="medium">Cidade</ion-label>
+        <ion-input type="text" formControlName="cidade"></ion-input>
+      </ion-item>  
+      <ion-item>
+        <ion-label position="floating" color="medium">Endereço</ion-label>
+          <ion-input type="text" formControlName="endereco"></ion-input>
+        </ion-item>  
+ 
+          <ion-item>
+            <ion-label position="floating" color="medium">Número</ion-label>
+              <ion-input type="text" formControlName="numero"></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="medium">Estado</ion-label>
+              <ion-input type="text" formControlName="estado"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" color="medium">E-mail</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+              </ion-item>
+              <ion-item>
+              <ion-label position="floating" color="medium">Telefone</ion-label>
+              <ion-input type="text" formControlName="telefone"></ion-input>
+            </ion-item>  
+ <ion-label color="danger" class="ion-text-center">
+   <p *ngIf="formGroup.controls.nome.errors && formGroup.controls.nome.dirty"> *Nome Inválido</p> 
+  <p *ngIf="formGroup.controls.cpf.errors && formGroup.controls.cpf.dirty"> *CPF Inválido</p>
+  <p *ngIf="formGroup.controls.cidade.errors && formGroup.controls.cidade.dirty"> *Cidade Inválida</p> 
+  <p *ngIf="formGroup.controls.endereco.errors && formGroup.controls.endereco.dirty"> *Endereço Inválido</p>
+  <p *ngIf="formGroup.controls.numero.errors && formGroup.controls.numero.dirty"> *Estado Inválido</p>
+  <p *ngIf="formGroup.controls.estado.errors && formGroup.controls.estado.dirty"> *Estado Inválido</p>
+  <p *ngIf="formGroup.controls.email.errors && formGroup.controls.email.dirty"> *E-mail Inválido</p>
+  <p *ngIf="formGroup.controls.telefone.errors && formGroup.controls.telefone.dirty"> *Telefone Inválido</p>
+
+
+  </ion-label> 
+  </ion-card-content>
+  <ion-grid class="ion-text-center">
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)="cancelar()">Cancelar
+        </ion-button> 
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" expand="block" (click)= "cadastrar()" [disabled]= "formGroup.invalid">Cadastrar</ion-button> 
+      </ion-col>
+    </ion-row>
+
+
+
+</ion-grid>
+  </ion-card>
+</form>
+     
+
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="dark">
+    <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="light">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-vimeo"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-google"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+</ion-content>
