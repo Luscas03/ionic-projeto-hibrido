@@ -41,37 +41,6 @@ const routes: Routes = [
     data : { authGuardPipe : redirectToLogin}
   },
   {
-    path: 'cliente-cadastro',
-    loadChildren: () => import('./cliente-cadastro/cliente-cadastro.module').then( m => m.ClienteCadastroPageModule)
-  },
-  {
-    path: 'cliente-lista',
-    loadChildren: () => import('./cliente-lista/cliente-lista.module').then( m => m.ClienteListaPageModule)
-  },
-  
-   
-  {
-    path: 'cliente-visualizar',
-    loadChildren: () => import('./cliente-visualizar/cliente-visualizar.module').then( m => m.ClienteVisualizarPageModule)
-  },
-  {
-    path: 'cliente-visualizar/:id',
-    loadChildren: () => import('./cliente-visualizar/cliente-visualizar.module').then( m => m.ClienteVisualizarPageModule)
-  },
-  
-  {
-    path: 'cliente-atualizar',
-    loadChildren: () => import('./cliente-atualizar/cliente-atualizar.module').then( m => m.ClienteAtualizarPageModule)
-  },
-  {
-    path: 'cliente-atualizar/:id',
-    loadChildren: () => import('./cliente-atualizar/cliente-atualizar.module').then( m => m.ClienteAtualizarPageModule)
-  },
-  {
-    path: 'cliente-remove/:id',
-    loadChildren: () => import('./cliente-remove/cliente-remove.module').then( m => m.ClienteRemovePageModule)
-  },
-  {
     path: 'login-recuperar',
     loadChildren: () => import('./login-recuperar/login-recuperar.module').then( m => m.LoginRecuperarPageModule)
   },
