@@ -1,6 +1,9 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>pratos-cadastro</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Cadastrar Pratos</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -16,8 +19,15 @@
     </ion-item>
 
     <ion-item>
-        <ion-label position="stacked">Grupo</ion-label>
-        <ion-input></ion-input>
+        <ion-label>Grupo</ion-label>
+        <ion-select>
+            <ion-select-option value="graos">Grãos</ion-select-option>
+            <ion-select-option value="carnes">Carnes</ion-select-option>
+            <ion-select-option value="peixes">Peixes</ion-select-option>
+            <ion-select-option value="derivados">Derivados</ion-select-option>
+            <ion-select-option value="bebidas">Bebidas</ion-select-option>
+        </ion-select>
     </ion-item>
-    <ion-button expand="block">Cadastrar</ion-button>
+
+    <ion-button color="medium" expand="block">Cadastrar</ion-button>
 </ion-content>

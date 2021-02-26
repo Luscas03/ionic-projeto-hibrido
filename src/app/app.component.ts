@@ -25,6 +25,11 @@ export class AppComponent implements OnInit {
     },
     
     {
+      title: 'Cadastro de Pratos',
+      url: '/pratos-cadastro',
+      icon: 'bag-handle'
+    },
+    {
       title: 'Lista de Produtos',
       url: '/produto-lista',
       icon: 'apps'
