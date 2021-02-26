@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { TemplateService } from './service/template.service';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -34,7 +33,6 @@ import { TemplateService } from './service/template.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     TemplateService
-    
   ],
   bootstrap: [AppComponent]
 })
