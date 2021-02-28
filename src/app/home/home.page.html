@@ -10,7 +10,15 @@
 
   <ion-content fullscreen class="ion-padding">
    
-     
+    <ion-list>
+
+      <ion-item *ngFor= "let consulta of lista"> 
+  
+        <ion-label class="preto">{{consulta.date}}</ion-label>
+        <!-- <ion-button (click)="visualizar(cliente)" color="medium">Visualizar</ion-button> -->
+      </ion-item>
+  
+    </ion-list>
 
  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button color="dark">

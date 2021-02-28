@@ -59,5 +59,8 @@ recuperar(){
   })
 
 }
+cancelar(){
+  this.navCtrl.navigateBack(['/login']);
+}
 
 }
