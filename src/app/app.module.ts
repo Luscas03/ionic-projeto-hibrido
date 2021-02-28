@@ -14,8 +14,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { TemplateService } from './service/template.service';
-import { ClienteService } from './service/cliente.service';
-import { ProdutoService } from './service/produto.service';
+import { ConsultaService } from './service/consulta.service';
+
 
 
 @NgModule({
@@ -35,8 +35,7 @@ import { ProdutoService } from './service/produto.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     TemplateService,
-    ClienteService,
-    ProdutoService
+    ConsultaService
   ],
   bootstrap: [AppComponent]
 })
