@@ -24,7 +24,7 @@ export class MarcarConsultaPage implements OnInit {
   ngOnInit() {
   }
 
-  cadastro() {
+  cadastrar() {
     this.template.loading.then(load => { // iniciar o carregamento
       load.present(); // forçar inicio carremento
 
@@ -41,7 +41,10 @@ export class MarcarConsultaPage implements OnInit {
       especialidade: [],
       date: [],
       hora: []
+
     })
   }
+
+  
 
 }

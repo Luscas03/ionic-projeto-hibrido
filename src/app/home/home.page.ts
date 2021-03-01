@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
+import { Consulta } from '../model/consulta';
+import { ConsultaService } from '../service/consulta.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,9 @@ import { MenuController, NavController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+lista : Consulta[] = [];
   constructor(private menuCtrl : MenuController,
+    private consultaServ : ConsultaService,
     private navCtrl: NavController) { 
     this.menuCtrl.enable(true);
   
@@ -16,21 +19,15 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    this.consultaServ.listaDeConsultas().subscribe(response => {
+
+      this.lista = response;
+
+    })
     
     }
 
-    toggleTheme(event){
-   
   
-     if(event.detail.checked){
-       document.body.setAttribute('color-theme','dark')
-     }else{
-      document.body.setAttribute('color-theme','light')
-     }
-     
-      
-
-    }
     
     
     marcar() {

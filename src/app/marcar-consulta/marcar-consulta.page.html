@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="formGroup">
   <ion-card>
 
     <ion-card-content>
@@ -17,7 +17,7 @@
 
     <ion-item>
       <ion-label>Tipo</ion-label>
-      <ion-select value="notifications" interface="action-sheet">
+      <ion-select value="notifications" interface="action-sheet" formControlName="tipo">
         <ion-select-option value="online">Online</ion-select-option>
         <ion-select-option value="presencial">Presencial</ion-select-option>
      
@@ -26,7 +26,7 @@
 
     <ion-item>
       <ion-label>Especialidade</ion-label>
-      <ion-select value="notifications" interface="action-sheet">
+      <ion-select value="notifications" interface="action-sheet" formControlName="especialidade">
         <ion-select-option value="nutricao" color="medium">Nutrição</ion-select-option>
         <ion-select-option value="ortopedia">Ortopedia</ion-select-option>
      
@@ -35,17 +35,18 @@
 
     <ion-item>
       <ion-label position="stacked">Data</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" formControlName="date"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Hora</ion-label>
-      <ion-input></ion-input>
+      <ion-input formControlName="hora"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" color="medium" (click)="cadastro()">Agendar</ion-button>
+  <ion-button expand="full" color="medium" (click)="cadastrar()">Agendar</ion-button>
   
 </ion-card-content>
 </ion-card>
+</form>
   
 </ion-content> 

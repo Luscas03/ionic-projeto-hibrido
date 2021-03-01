@@ -11,7 +11,7 @@ export class ConsultaService{
     cadastrar(consulta: any) : Observable<any>{ // Função cadastro
         return from(new Observable(observe=>{ // Converte para Observable
             //codigo -> Inicia o cadastro
-            this.firestore.collection('consulta').add(Consulta).then(response=>{
+            this.firestore.collection('consulta').add(consulta).then(response=>{
                 observe.next("Agendado com sucesso");
             }).catch(err=>{
                 console.log(err);

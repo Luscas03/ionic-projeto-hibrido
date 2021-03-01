@@ -8,24 +8,24 @@
 </ion-header>
 
 <ion-content>
-    
+    <form [formGroup]="formGroup">
     <ion-card>
-        <ion-card-content>
+        <ion-card-content> 
 
   
     <ion-item>
         <ion-label position="floating">Nome do prato</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="nomeprato"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating">Calorias</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="calorias"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label>Grupo</ion-label>
-        <ion-select value="notifications" interface="action-sheet">
+        <ion-select value="notifications" interface="action-sheet" formControlName="grupo">
           <ion-select-option value="graos">Grãos</ion-select-option>
           <ion-select-option value="carnes">Carnes</ion-select-option>
           <ion-select-option value="bebidas">Bebidas</ion-select-option>
@@ -33,7 +33,8 @@
           <ion-select-option value="hortalicaas">Hortaliças</ion-select-option>
         </ion-select>
       </ion-item>
-    <ion-button expand="block" color="medium">Cadastrar</ion-button>
+    <ion-button expand="block" color="medium" (click)="cadastrar()">Cadastrar</ion-button>
 </ion-card-content>
 </ion-card>
-</ion-content>
+</form>
+</ion-content> 

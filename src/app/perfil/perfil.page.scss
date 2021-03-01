@@ -1,18 +1,25 @@
-img {
+#foto  {
     border-radius: 50%;
    
     min-width: 200px;
     max-width: 200px;
+    transform: translate(0px, -130px);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.274);
    
 }
-#foto {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.192);
-    margin-bottom: 5%;
-}
-ion-card {
 
 
-}
 p {
     line-height: 4;
+   
+}
+
+#fundo  {
+    width: 100%;
+
+}
+
+ion-card {
+    color: black;
+    transform: translate(0px, -130px);
 }
