@@ -10,7 +10,7 @@
 
 
 p {
-    line-height: 4;
+    line-height: 3;
    
 }
 
@@ -22,4 +22,20 @@ p {
 ion-card {
     color: black;
     transform: translate(0px, -130px);
+ 
+}
+.cinza {
+    color: rgb(235, 232, 232);
+ 
+}
+h1 {
+    font-weight: bold;
+}
+h2 {
+    font-weight: bold;
+}
+.background {
+    background: rgb(255,141,0);
+background: linear-gradient(90deg, rgba(255,141,0,1) 0%, rgba(132,107,255,1) 100%);
+color: rgb(235, 232, 232);
 }
