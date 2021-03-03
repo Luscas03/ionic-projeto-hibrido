@@ -25,12 +25,21 @@ export class MarcarConsultaPage implements OnInit {
   }
 
   cadastrar() {
+    console.log(this.formGroup.value);
+    
+    let d = new Date(this.formGroup.controls['date'].value);
+    console.log(d.getDay());
+
     this.template.loading.then(load => { // iniciar o carregamento
       load.present(); // forçar inicio carremento
 
+      
+
+        
       this.consultaServ.cadastrar(this.formGroup.value).subscribe(response => {
         load.dismiss();
         this.template.myAlert(response);
+        
       })
 
     })
@@ -39,9 +48,7 @@ export class MarcarConsultaPage implements OnInit {
     this.formGroup = this.formB.group({
       tipo: [],
       especialidade: [],
-      date: [],
-      hora: []
-
+      date: []
     })
   }
 

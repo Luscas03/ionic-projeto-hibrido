@@ -10,19 +10,27 @@
 
 <ion-content fullscreen class="ion-padding">
    
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Últimas consultas</ion-card-title>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor= "let consulta of lista">
+       
+        <ion-label>
+          <h2>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</h2>
+          <h3>{{consulta.especialidade}}</h3>
+          <p>{{consulta.tipo}}</p>
+        </ion-label>
+        <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline"></ion-icon></ion-avatar>
+     
+      </ion-item>
+    </ion-list>
+
+    </ion-card>
   
-  
 
-      <ion-item *ngFor= "let consulta of lista"> 
-
-        <p>{{consulta.hora}} </p> 
-    
-        <p> {{consulta.especialidade}}</p>
-        <!-- <ion-button (click)="visualizar(cliente)" color="medium">Visualizar</ion-button> -->
-              
-
-
-      </ion-item> 
 
 
   

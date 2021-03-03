@@ -25,22 +25,17 @@ export class ConsultaService{
 
         return from(new Observable(observe=>{ // Converte para Observable
             
-            this.firestore.collection('consulta').snapshotChanges().subscribe(response=>{ 
+            this.firestore.collection('consulta').ref.limit(3).get().then(response=>{ 
                 
                 let lista : Consulta[] = []; // iniciar uma lista vazia  
 
-                 // converter o response em objetos consulta
-                 response.map(obj=>{ 
-                    // dados do consulta
-                    let data = obj.payload.doc.data();
-                    let id = obj.payload.doc.id;
-
-                    // dados do consulta no objeto CLiente
+                response.forEach(obj=>{
+                    let data = obj.data();
+                    let id = obj.id;
                     let consulta : Consulta = new Consulta();
                     consulta.setData(id,data);
                     lista.push(consulta); // adicionando o consulta na lista
                 })
-
                 observe.next(lista);
             })
 
