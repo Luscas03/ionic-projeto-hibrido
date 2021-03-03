@@ -37,7 +37,8 @@ import { ClienteService } from './service/cliente.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     TemplateService,
     ConsultaService,
-    ClienteService
+    ClienteService,
+    ConsultaService
   ],
   bootstrap: [AppComponent]
 })

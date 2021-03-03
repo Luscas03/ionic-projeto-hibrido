@@ -19,23 +19,21 @@
       <ion-item *ngFor= "let consulta of lista">
        
         <ion-label>
-          <h2>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</h2>
-          <h3>{{consulta.especialidade}}</h3>
           <p>{{consulta.tipo}}</p>
+          
+          <p>{{consulta.especialidade}}</p>
+          <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
+ 
         </ion-label>
-        <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline"></ion-icon></ion-avatar>
+        
+        <!-- <ion-avatar slot="end" (click)="visualizar(id)"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(id)"></ion-icon></ion-avatar> -->
+        <ion-button color="medium" (click)="visualizar(id)">Visualizar</ion-button>
      
       </ion-item>
     </ion-list>
 
     </ion-card>
   
-
-
-
-  
-
-
  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button color="dark">
         <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
@@ -56,6 +54,4 @@
       </ion-fab-list>
     </ion-fab>
 
-    
- 
 </ion-content>

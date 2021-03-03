@@ -27,19 +27,14 @@ lista : Consulta[] = [];
         this.lista = response;
       })
     })
+  }
 
-
-   
-    
+    visualizar(consulta){
+      this.navCtrl.navigateForward(['/consulta-visualizar',consulta.id]);
     }
-
   
-    
-    
     marcar() {
       this.navCtrl.navigateForward(['/marcar-consulta']);
     }
-  
-  
 }
-
+  
