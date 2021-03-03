@@ -25,7 +25,7 @@ export class PerfilPage implements OnInit {
         this.clienteServ.obterPerfil(this.uid).subscribe(response=>{
           if(response==null){
             //perfil não existe
-            this.navCtrl.navigateRoot('\home'); // Página formulário para criar o perfil, trocar pela home
+            this.navCtrl.navigateRoot('\perfil-atualizar'); // Página formulário para criar o perfil, trocar pela home
           }else{
             // perfil existe
             this.clienteServ.obterPerfil(this.uid).subscribe(data=>{
