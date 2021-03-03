@@ -73,7 +73,11 @@ const routes: Routes = [
   {
     path: 'pratos-cadastro',
     loadChildren: () => import('./pratos-cadastro/pratos-cadastro.module').then( m => m.PratosCadastroPageModule)
+  },  {
+    path: 'perfil-atualizar',
+    loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule)
   },
+
 
 ];
 

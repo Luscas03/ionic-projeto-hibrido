@@ -21,26 +21,21 @@ export class ConsultaService{
         }))
     }
 
-    listaDeConsultas(): Observable<any>{
+    listaDeConsultas(idcliente): Observable<any>{
 
         return from(new Observable(observe=>{ // Converte para Observable
             
-            this.firestore.collection('consulta').snapshotChanges().subscribe(response=>{ 
-                
+            this.firestore.collection('consulta').ref.where("idcliente","==",idcliente).limit(3).get().then(response=>{ 
+                /// Listar consultas somente do usuário atual
                 let lista : Consulta[] = []; // iniciar uma lista vazia  
 
-                 // converter o response em objetos consulta
-                 response.map(obj=>{ 
-                    // dados do consulta
-                    let data = obj.payload.doc.data();
-                    let id = obj.payload.doc.id;
-
-                    // dados do consulta no objeto CLiente
+                response.forEach(obj=>{
+                    let data = obj.data();
+                    let id = obj.id;
                     let consulta : Consulta = new Consulta();
                     consulta.setData(id,data);
                     lista.push(consulta); // adicionando o consulta na lista
                 })
-
                 observe.next(lista);
             })
 

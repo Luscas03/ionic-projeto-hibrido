@@ -3,16 +3,15 @@
   id : string;
   tipo : string;
   especialidade : string;
-  date: string;
-  hora : string;
+  date: Date;
+  idcliente : string;
 
   setData(id : any, data: any){
       this.id = id;
       this.tipo = data.tipo;
       this.especialidade = data.especialidade;
-      this.date = data.date;
-      this.hora = data.hora;
-
+      this.date = new Date(data.date);
+      this.idcliente = data.idcliente;
   }
 
 }

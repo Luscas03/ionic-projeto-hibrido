@@ -13,14 +13,16 @@ export class ClienteService {
 
             this.firestore.collection('perfil').doc(id).snapshotChanges().subscribe(response => {
 
-                let data = response.payload.data();
-                let id = response.payload.id;
+                try {
+                    let data = response.payload.data();
+                    let id = response.payload.id;
+                    let consulta: Consulta = new Consulta();
+                    consulta.setData(id, data);
+                    observe.next(consulta);
+                } catch (err) {
+                    observe.next(null);
+                }
 
-                // dados do cliente no objeto CLiente
-                let consulta: Consulta = new Consulta();
-                consulta.setData(id, data);
-                observe.next(consulta);
-                
             }, err => {
                 observe.next(null);
             })
@@ -29,7 +31,7 @@ export class ClienteService {
         }))
     }
 
-    atualizarPerfil(id, data): Observable<any>{
+    atualizarPerfil(id, data): Observable<any> {
 
         return from(new Observable(observe => {
 
@@ -38,12 +40,8 @@ export class ClienteService {
             }, err => {
                 observe.next(null);
             })
-            
 
         }))
     }
-
-
-
 
 }
