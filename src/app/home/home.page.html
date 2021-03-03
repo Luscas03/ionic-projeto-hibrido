@@ -7,7 +7,6 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content fullscreen class="ion-padding">
    
   <ion-card>
@@ -25,13 +24,12 @@
           <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
  
         </ion-label>
-        
+       
         <!-- <ion-avatar slot="end" (click)="visualizar(id)"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(id)"></ion-icon></ion-avatar> -->
         <ion-button color="medium" (click)="visualizar(id)">Visualizar</ion-button>
      
       </ion-item>
     </ion-list>
-
     </ion-card>
   
  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
