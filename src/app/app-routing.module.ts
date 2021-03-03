@@ -73,9 +73,18 @@ const routes: Routes = [
   {
     path: 'pratos-cadastro',
     loadChildren: () => import('./pratos-cadastro/pratos-cadastro.module').then( m => m.PratosCadastroPageModule)
-  },  {
+  },
+  {
     path: 'perfil-atualizar',
     loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule)
+  },
+  {
+    path: 'consulta-visualizar/:id ',
+    loadChildren: () => import('./consulta-visualizar/consulta-visualizar.module').then( m => m.ConsultaVisualizarPageModule)
+  },
+  {
+    path: 'consulta-remove/:id',
+    loadChildren: () => import('./consulta-remove/consulta-remove.module').then( m => m.ConsultaRemovePageModule)
   },
 
 
