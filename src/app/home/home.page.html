@@ -7,7 +7,6 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content fullscreen class="ion-padding">
    
   <ion-card>
@@ -20,38 +19,16 @@
        
         <ion-label>
           <p>{{consulta.tipo}}</p>
-          
+  
           <p>{{consulta.especialidade}}</p>
           <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
  
         </ion-label>
-        
         <!-- <ion-avatar slot="end" (click)="visualizar(id)"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(id)"></ion-icon></ion-avatar> -->
-        <ion-button color="medium" (click)="visualizar(id)">Visualizar</ion-button>
+        <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button>
      
       </ion-item>
     </ion-list>
-
     </ion-card>
-  
- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-      <ion-fab-button color="dark">
-        <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button color="light">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light">
-          <ion-icon name="logo-vimeo"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-button color="light">
-          <ion-icon name="logo-google"></ion-icon>
-        </ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
 
 </ion-content>

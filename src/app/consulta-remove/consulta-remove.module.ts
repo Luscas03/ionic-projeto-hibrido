@@ -14,6 +14,7 @@ import { ConsultaRemovePage } from './consulta-remove.page';
     FormsModule,
     IonicModule,
     ConsultaRemovePageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ConsultaRemovePage]
 })

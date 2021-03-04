@@ -79,7 +79,7 @@ const routes: Routes = [
     loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule)
   },
   {
-    path: 'consulta-visualizar/:id ',
+    path: 'consulta-visualizar/:id',
     loadChildren: () => import('./consulta-visualizar/consulta-visualizar.module').then( m => m.ConsultaVisualizarPageModule)
   },
   {
