@@ -24,9 +24,8 @@
           <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
  
         </ion-label>
-        <!-- <ion-avatar slot="end" (click)="visualizar(id)"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(id)"></ion-icon></ion-avatar> -->
-        <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button>
-     
+        <ion-avatar slot="end" (click)="visualizar(consulta)"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(consulta)"></ion-icon></ion-avatar>
+        <!-- <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button> -->
       </ion-item>
     </ion-list>
     </ion-card>
