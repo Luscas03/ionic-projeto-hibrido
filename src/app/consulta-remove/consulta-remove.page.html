@@ -9,11 +9,17 @@
 
 <ion-content>
 
-  <p>Deseja excluir {{consulta.tipo}} ?</p>
-  <p>{{consulta.especialidade}}</p>
-  <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
-  
-          
-  <ion-button color="danger" expand="full" (click)="excluir()">Excluir</ion-button>
+  <ion-card class="background">
+    <ion-card-content>
+      <ion-text class="cinza">
+        <h2>Deseja realmente fazer exclusão da Consulta:</h2>
+        {{consulta.tipo}} 
+        {{consulta.especialidade}}
+        {{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}
+        </ion-text>
 
+  </ion-card-content>
+  </ion-card>
+
+  <ion-button color="danger" expand="full" (click)="excluir()">Excluir</ion-button>
 </ion-content>
