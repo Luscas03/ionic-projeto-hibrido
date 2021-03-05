@@ -11,10 +11,10 @@
    
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Últimas consultas</ion-card-title>
+      <ion-card-title class="ion-text-center">Últimas Consultas</ion-card-title>
     </ion-card-header>
-
-    <ion-list>
+    <ion-card-content>
+    <ion-list >
       <ion-item *ngFor= "let consulta of lista">
        
         <ion-label>
@@ -28,6 +28,7 @@
         <!-- <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button> -->
       </ion-item>
     </ion-list>
-    </ion-card>
+  </ion-card-content>
+  </ion-card>
 
 </ion-content>
