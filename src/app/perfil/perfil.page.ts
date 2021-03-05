@@ -45,6 +45,8 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
   }
 
-
+atualizar(){
+  this.navCtrl.navigateRoot('/perfil-atualizar');
+}
 
 }
