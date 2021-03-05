@@ -18,38 +18,38 @@
 
 </ion-card-content>
 </ion-card>
+<form [formGroup]="formGroup">
   <ion-card class="background">
     <ion-card-content>
       <ion-item>
         <ion-label position="floating" color="medium">Nome</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="nome"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" color="medium">E-mail</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" color="medium">Endereço</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="endereco"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" color="medium">Telefone</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="telefone"></ion-input>
       </ion-item>
       <ion-grid class="ion-text-center">
         <ion-row>
+        
           <ion-col>
-            <ion-button expand="full" color="medium">Cancelar</ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button expand="full" color="medium">Próximo</ion-button>
+            <ion-button expand="full" color="medium" (click)="atualizar()">Próximo</ion-button>
           </ion-col>
         
         </ion-row>
       
       </ion-grid>
     </ion-card-content>
+  
     </ion-card>
-
+  </form>
     
 </ion-content>

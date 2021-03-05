@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { from, Observable } from "rxjs";
+import { Cliente } from "../model/cliente";
 import { Consulta } from "../model/consulta";
 
 @Injectable()
@@ -16,9 +17,9 @@ export class ClienteService {
                 try {
                     let data = response.payload.data();
                     let id = response.payload.id;
-                    let consulta: Consulta = new Consulta();
-                    consulta.setData(id, data);
-                    observe.next(consulta);
+                    let cliente: Cliente = new Cliente();
+                    cliente.setData(id, data);
+                    observe.next(cliente);
                 } catch (err) {
                     observe.next(null);
                 }
