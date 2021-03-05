@@ -14,7 +14,7 @@
   
       <ion-item>
         <ion-label>Tipo</ion-label>
-        <ion-select value="notifications" interface="action-sheet" formControlName="tipo">
+        <ion-select value="notifications" disabled="true" interface="action-sheet" formControlName="tipo">
           <ion-select-option value="Online">Online</ion-select-option>
           <ion-select-option value="Presencial">Presencial</ion-select-option>
        
@@ -26,7 +26,7 @@
   
       <ion-item>
         <ion-label>Especialidade</ion-label>
-        <ion-select value="notifications" interface="action-sheet" formControlName="especialidade">
+        <ion-select value="notifications"  disabled="true" interface="action-sheet" formControlName="especialidade">
           <ion-select-option value="Nutrição" color="medium">Nutrição</ion-select-option>
           <ion-select-option value="Ortopedia">Ortopedia</ion-select-option>
        
@@ -35,7 +35,7 @@
       <ion-item>
         <ion-label>Data e Hora</ion-label>
         
-        <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selecione a Data" formControlName="date"></ion-datetime>
+        <ion-datetime displayFormat="D MMM YYYY H:mm" disabled="true" placeholder="Selecione a Data" formControlName="date"></ion-datetime>
       </ion-item>
      
     </ion-list>
