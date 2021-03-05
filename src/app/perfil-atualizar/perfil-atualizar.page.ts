@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ClienteService } from '../service/cliente.service';
+import { TemplateService } from '../service/template.service';
 
 @Component({
   selector: 'app-perfil-atualizar',
@@ -6,10 +10,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-atualizar.page.scss'],
 })
 export class PerfilAtualizarPage implements OnInit {
-
-  constructor() { }
+  idcliente : string = "";
+  formGroup: FormGroup;
+  constructor(private formB: FormBuilder,
+  private template: TemplateService,
+  private auth: AngularFireAuth,
+  private clienteServ : ClienteService
+  ) {
+    this.iniciarForm();
+    this.auth.authState.subscribe(response=>{
+      this.idcliente = response.uid;
+    })
+  }
 
   ngOnInit() {
+  }
+
+  atualizar(){
+    this.clienteServ.atualizarPerfil(this.idcliente, this.formGroup.value).subscribe(response=>{
+      console.log(response);
+    })
+    
+  }
+
+  iniciarForm() {
+    this.formGroup = this.formB.group({
+      nome: [],
+      email: [],
+      endereco: [],
+      telefone: []
+    })
   }
 
 }
