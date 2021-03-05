@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
   iniciarForm() {
     this.formGroup = this.formB.group({
       username: ['main@main.com', [Validators.required, Validators.email]],
-      password: ['12345678', [Validators.required, Validators.minLength(6)]]
+      password: ['12345678', [Validators.required, Validators.minLength(7)]]
 
     })
   }

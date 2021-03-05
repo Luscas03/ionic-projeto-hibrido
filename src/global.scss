@@ -24,9 +24,14 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-#teste {
+#ionmenu {
     --ion-item-background: #000000;
 }
 ion-item {
-    color: black;
+    color: rgb(0, 0, 0);
+}
+#grad {
+    --ion-item-background: #000000;  
+    // --ion-item-background: linear-gradient(90deg, rgba(255,141,0,1) 0%, rgba(132,107,255,1) 100%);
+
 }
