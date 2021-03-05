@@ -58,7 +58,7 @@ this.formGroup = this.formB.group ({
   // name :['', [Validators.required, Validators.minLength(3)]],
    username : ['', [Validators.required, Validators.email]],
 //  tel : ['', [Validators.required, Validators.pattern(new RegExp("[0-9 ]{11}"))]],
-  password : ['', [Validators.required, Validators.minLength(8)]]
+  password : ['', [Validators.required, Validators.minLength(7)]]
 })
 
   }
