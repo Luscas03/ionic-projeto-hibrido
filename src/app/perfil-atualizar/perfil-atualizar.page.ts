@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import { TemplateService } from '../service/template.service';
 import { NavController } from '@ionic/angular';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-perfil-atualizar',
@@ -13,6 +14,8 @@ import { NavController } from '@ionic/angular';
 export class PerfilAtualizarPage implements OnInit {
   idcliente : string = "";
   formGroup: FormGroup;
+  cliente : Cliente = new Cliente();
+
   constructor(private formB: FormBuilder,
   private template: TemplateService,
   private auth: AngularFireAuth,
@@ -22,6 +25,10 @@ export class PerfilAtualizarPage implements OnInit {
     this.iniciarForm();
     this.auth.authState.subscribe(response=>{
       this.idcliente = response.uid;
+      this.clienteServ.obterPerfil(this.idcliente).subscribe(response=>{
+        this.cliente = response;
+        this.iniciarForm();
+      })
     })
   }
 
@@ -38,10 +45,10 @@ export class PerfilAtualizarPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formB.group({
-      nome: [],
-      email: [],
-      endereco: [],
-      telefone: []
+      nome: [this.cliente.nome],
+      email: [this.cliente.email],
+      endereco: [this.cliente.endereco],
+      telefone: [this.cliente.telefone]
     })
   }
 

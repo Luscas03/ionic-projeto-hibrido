@@ -27,6 +27,7 @@ lista : Consulta[] = [];
     this.auth.authState.subscribe(response=>{ // dados usuário logado
       this.consultaServ.listaDeConsultas(response.uid).subscribe(response => {
         this.lista = response;
+        console.log(this.lista)
       })
     })
   }
