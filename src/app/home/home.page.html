@@ -31,4 +31,23 @@
   </ion-card-content>
   </ion-card>
 
+  <ion-card-header>
+    <ion-card-title class="ion-text-center" color="dark">Listar Pratos</ion-card-title>
+  </ion-card-header>
+  <ion-list >
+
+    <ion-item *ngFor= "let prato of lista">
+     
+      <ion-label>
+        <p>{{prato.nomeprato}}</p>
+
+        <p>{{prato.calorias}}</p>
+
+        <p>{{prato.grupo}}</p>
+
+      </ion-label>
+      <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(prato)"></ion-icon></ion-avatar>
+      <!-- <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button> -->
+    </ion-item>
+  </ion-list>
 </ion-content>
