@@ -48,6 +48,8 @@ export class MarcarConsultaPage implements OnInit {
       })
 
     })
+
+    console.log(this.formGroup.value)
   }
   iniciarForm() {
     this.formGroup = this.formB.group({
