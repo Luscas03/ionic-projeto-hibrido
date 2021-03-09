@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from, Observable } from "rxjs";
-import { Prato} from "../model/prato";
+import { Prato } from '../model/prato';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,47 +21,43 @@ export class PratoService {
         // fim codigo
     }))
 }
+listaDePrato(): Observable<any>{
+    return from (new Observable(observe=>{
 
-listaDeConsultas(): Observable<any>{
+     
 
-    return from(new Observable(observe=>{ // Converte para Observable
-        
-        this.firestore.collection('prato').snapshotChanges().subscribe(response=>{ 
-            
-            let lista : Prato[] = []; // iniciar uma lista vazia  
-
-             // converter o response em objetos consulta
-             response.map(obj=>{ 
-                // dados do consulta
-                let data = obj.payload.doc.data();
-                let id = obj.payload.doc.id;
-
-                // dados do consulta no objeto CLiente
-                let prato : Prato = new Prato();
-                prato.setData(id,data);
-                lista.push(prato); // adicionando o consulta na lista
-            })
-
-            observe.next(lista);
+       this.firestore.collection('prato').snapshotChanges().subscribe(response=>{
+        let listap : Prato[] = [];
+          response.map(obj=>{ //converter o response em objetos cliente
+            //dados do cleinte
+        let data  =  obj.payload.doc.data();
+        let id =  obj.payload.doc.id;
+        //dados do cliente no objeto Cliente
+            let prato : Prato = new Prato();
+            prato.setData(id,data);
+            listap.push(prato); // adicionando o cliente na lista 
+          })
+          observe.next(listap);
         })
+    }))
 
 
-    }))  
+
 }
 
 buscarPorId(id : any): Observable<any>{
     return from(new Observable(observe=>{ // Converte para Observable
 
-        this.firestore.collection('Prato').doc(id).snapshotChanges().subscribe(response=>{
+        this.firestore.collection('prato').doc(id).snapshotChanges().subscribe(response=>{
             
             let data = response.payload.data();
             let id = response.payload.id;
 
             // dados do cliente no objeto CLiente
-            let prato : Prato = new Prato();
-            prato.setData(id,data);
+            let consulta : Prato = new Prato();
+            consulta.setData(id,data);
 
-            observe.next(prato);
+            observe.next(consulta);
         },err=>{
             observe.next(null);
         })

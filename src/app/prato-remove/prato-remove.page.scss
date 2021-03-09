@@ -1,19 +1,7 @@
-* {
-    --ion-item-background: #F2EFEF;
-}
-ion-card-header {
+ ion-card-header {
     background: rgb(255,141,0);
     background: linear-gradient(90deg, rgba(255,141,0,1) 0%, rgba(132,107,255,1) 100%);
-    
-}
-ion-card {
+ }
+ ion-card {
     background-color: #F2EFEF;
-}
-ion-list {
-  margin-top: 10px;
-}
-
-#buttons {
-    padding: 3%;
-}
- 
+ }

@@ -86,6 +86,16 @@ const routes: Routes = [
     path: 'consulta-remove/:id',
     loadChildren: () => import('./consulta-remove/consulta-remove.module').then( m => m.ConsultaRemovePageModule)
   },
+  {
+    path: 'prato-visualizar/:id',
+    loadChildren: () => import('./prato-visualizar/prato-visualizar.module').then( m => m.PratoVisualizarPageModule)
+  },
+  {
+    path: 'prato-remove/:id',
+    loadChildren: () => import('./prato-remove/prato-remove.module').then( m => m.PratoRemovePageModule)
+  },
+
+
 
 
 ];

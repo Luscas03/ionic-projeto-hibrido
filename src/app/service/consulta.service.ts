@@ -25,7 +25,7 @@ export class ConsultaService{
 
         return from(new Observable(observe=>{ // Converte para Observable
             
-            this.firestore.collection('consulta').ref.where("idcliente","==",idcliente).limit(3).get().then(response=>{ 
+            this.firestore.collection('consulta').ref.where("idcliente","==",idcliente).limit(6).get().then(response=>{ 
                 /// Listar consultas somente do usuário atual
                 let lista : Consulta[] = []; // iniciar uma lista vazia  
 

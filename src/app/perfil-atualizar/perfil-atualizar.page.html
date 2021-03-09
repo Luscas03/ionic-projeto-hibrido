@@ -3,39 +3,42 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Perfil</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-card class="background">
-  <ion-card-content>
+<!-- <ion-card class="background">
+  <ion-card-content> -->
     
-<ion-text color="dark" class="ion-text-center" id="teste">
+<!-- <ion-text color="dark" class="ion-text-center" id="teste">
   <h3>Você está a um passo de ter uma experiência incrível!</h3>
   <p>Preencha todos os campos abaixo.</p>
-</ion-text>
+</ion-text> -->
 
-</ion-card-content>
-</ion-card>
+<!-- </ion-card-content>
+</ion-card> -->
 <form [formGroup]="formGroup">
   <ion-card class="background">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" color="dark">Personalizar Perfil</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
       <ion-item id="grad">
-        <ion-label position="floating" color="dark">Nome</ion-label>
-        <ion-input formControlName="nome" color="dark"></ion-input>
+        <ion-label position="floating" color="light">Nome</ion-label>
+        <ion-input formControlName="nome" color="light"></ion-input>
       </ion-item>
       <ion-item id="grad">
-        <ion-label position="floating" color="dark">E-mail</ion-label>
-        <ion-input formControlName="email" color="dark"></ion-input>
+        <ion-label position="floating" color="light">E-mail</ion-label>
+        <ion-input formControlName="email" color="light"></ion-input>
       </ion-item>
       <ion-item id="grad">
-        <ion-label position="floating" color="dark">Endereço</ion-label>
-        <ion-input formControlName="endereco" color="dark"></ion-input>
+        <ion-label position="floating" color="light">Endereço</ion-label>
+        <ion-input formControlName="endereco" color="light"></ion-input>
       </ion-item>
       <ion-item id="grad">
-        <ion-label position="floating" color="dark">Telefone</ion-label>
-        <ion-input formControlName="telefone" color="dark"></ion-input>
+        <ion-label position="floating" color="light">Telefone</ion-label>
+        <ion-input formControlName="telefone" color="light"></ion-input>
       </ion-item>
       <ion-grid class="ion-text-center">
         <ion-row>

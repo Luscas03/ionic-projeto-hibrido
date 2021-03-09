@@ -32,7 +32,7 @@ export class ConsultaVisualizarPage implements OnInit {
         console.log(this.consulta);
         this.iniciarForm();
       })
-
+ 
     })
   }
 
