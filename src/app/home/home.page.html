@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
-   
+  
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center" color="dark">Últimas Consultas</ion-card-title>
@@ -25,29 +25,34 @@
  
         </ion-label>
         <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(consulta)"></ion-icon></ion-avatar>
-        <!-- <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button> -->
+
       </ion-item>
     </ion-list>
   </ion-card-content>
-  </ion-card>
-
+  </ion-card> 
+  
+  
+  <ion-card>
   <ion-card-header>
     <ion-card-title class="ion-text-center" color="dark">Listar Pratos</ion-card-title>
   </ion-card-header>
-  <ion-list >
+  <ion-card-content>
+  <ion-list>
 
-    <ion-item *ngFor= "let prato of lista">
+    <ion-item *ngFor= "let prato of listap">
      
       <ion-label>
         <p>{{prato.nomeprato}}</p>
 
-        <p>{{prato.calorias}}</p>
+        <p>{{prato.calorias}} calorias</p>
 
         <p>{{prato.grupo}}</p>
 
       </ion-label>
-      <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(prato)"></ion-icon></ion-avatar>
-      <!-- <ion-button color="medium" (click)="visualizar(consulta)">Visualizar</ion-button> -->
+      <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizarP(prato)"></ion-icon></ion-avatar>
+
     </ion-item>
   </ion-list>
+</ion-card-content>
+</ion-card>
 </ion-content>

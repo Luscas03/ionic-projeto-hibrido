@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { PratoVisualizarPageRoutingModule } from './prato-visualizar-routing.module';
 
-import { HomePage } from './home.page';
+import { PratoVisualizarPage } from './prato-visualizar.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
-
+    PratoVisualizarPageRoutingModule,
+   ReactiveFormsModule
   ],
-  declarations: [HomePage]
+  declarations: [PratoVisualizarPage]
 })
-export class HomePageModule {}
+export class PratoVisualizarPageModule {}
