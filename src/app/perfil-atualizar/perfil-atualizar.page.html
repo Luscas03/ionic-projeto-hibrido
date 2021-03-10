@@ -18,6 +18,13 @@
 
 <!-- </ion-card-content>
 </ion-card> -->
+
+<img src="{{imagem}}" width="100%" />
+
+<ion-item>
+  <input type="file" (change)="uploadImage($event)" />
+</ion-item>
+
 <form [formGroup]="formGroup">
   <ion-card class="background">
     <ion-card-header>
