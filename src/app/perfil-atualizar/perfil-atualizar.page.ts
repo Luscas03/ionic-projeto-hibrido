@@ -57,6 +57,7 @@ export class PerfilAtualizarPage implements OnInit {
   }
 
   downloadImage(){
+    // template load
     this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).getDownloadURL().then(url=>{
       this.imagem = url;
     })
