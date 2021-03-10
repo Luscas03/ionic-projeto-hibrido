@@ -26,14 +26,15 @@
     <ion-item id="grad">
         <ion-label>Grupo</ion-label>
         <ion-select value="notifications" interface="action-sheet" formControlName="grupo">
-          <ion-select-option value="graos">Grãos</ion-select-option>
-          <ion-select-option value="carnes">Carnes</ion-select-option>
-          <ion-select-option value="bebidas">Bebidas</ion-select-option>
-          <ion-select-option value="verduras">Verduras</ion-select-option>
-          <ion-select-option value="hortalicaas">Hortaliças</ion-select-option>
+          <ion-select-option value="Grãos">Grãos</ion-select-option>
+          <ion-select-option value="Carnes">Carnes</ion-select-option>
+          <ion-select-option value="Bebidas">Bebidas</ion-select-option> 
+          <ion-select-option value="Verduras">Verduras</ion-select-option>
+          <ion-select-option value="Hortaliças">Hortaliças</ion-select-option>
+          <ion-select-option value="Outros">Outros</ion-select-option>
         </ion-select>
       </ion-item>
-    <ion-button expand="block" color="medium" (click)="cadastrar()">Cadastrar</ion-button>
+    <ion-button expand="block" color="medium" (click)="cadastrar()" fill="outline"  [disabled]= "formGroup.invalid">Cadastrar</ion-button>
 </ion-card-content>
 </ion-card>
 </form>

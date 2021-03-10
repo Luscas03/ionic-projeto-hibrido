@@ -12,3 +12,34 @@ ion-card-content {
     background-color: #F2EFEF;
 
 }
+img {
+    margin-top: 20px;
+    border-radius: 50%;
+}
+#teste {
+    background-color: blueviolet;
+}
+input[type='file'] {
+    display: none;
+
+    
+  }
+  label {
+    // background: rgb(255,141,0);
+    // background: linear-gradient(90deg, rgba(255,141,0,1) 0%, rgba(132,107,255,1) 100%);
+
+    color: #fff;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    // border-radius: 20px 20px 20px 20px;
+    // margin: 10px;
+    // padding: 6px 20px
+  }
+  #att {
+    font-size: 35px;
+    margin-left: auto;
+    margin-right: auto;
+
+}

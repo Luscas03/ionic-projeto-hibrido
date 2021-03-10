@@ -52,7 +52,7 @@ this.template.loading.then(load =>{
   cancelar(){
     this.navCtrl.navigateBack(['/login']);
   }
-  iniciarForm(){
+  iniciarForm(){ 
 
 this.formGroup = this.formB.group ({
   // name :['', [Validators.required, Validators.minLength(3)]],

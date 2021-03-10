@@ -3,7 +3,7 @@
    
    <div class="ion-text-center">
     <ion-title>Cadastrar</ion-title>
-    <ion-note color="medium">Preencha os Campos!</ion-note>
+
   </div>
   </ion-toolbar>
 </ion-header>
@@ -11,9 +11,10 @@
 
 <ion-content>
   <form [formGroup]="formGroup">
-  <ion-card>
-
-    <ion-card-content>
+  <ion-card id="grad">
+ 
+    <ion-card-content >
+      <ion-note class="ion-text-center" color="medium">Preencha os Campos!</ion-note>
   <!--<ion-item>
   <ion-label position="floating" color="medium">Nome</ion-label>
     <ion-input type="text" formControlName="name"></ion-input>
@@ -29,7 +30,7 @@
   <ion-item> 
     <ion-label position="floating" color="medium">Senha</ion-label>
     <ion-input type="password" formControlName="password"></ion-input>
-  </ion-item>
+  </ion-item> 
  <!-- <ion-item>
     <ion-label position="floating" color="medium">Confirmação de Senha</ion-label>
     <ion-input type="password"></ion-input>

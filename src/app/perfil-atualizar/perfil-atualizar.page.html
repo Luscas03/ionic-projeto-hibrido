@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-
+<ion-title class="ion-text-center">Atualização de Conta</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,17 +18,34 @@
 
 <!-- </ion-card-content>
 </ion-card> -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title class="ion-text-center" color="dark">Foto de Perfil:</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-text color="danger">
+     
+    </ion-text>
+    
+<img src="{{imagem}}"  />
+<ion-item id="grad">
+  <!-- <input id="teste" type="file" (change)="uploadImage($event)" /> -->
+ 
+  <label for='selecao-arquivo'>  <ion-icon name="create-outline" id="att" class="ion-text-center" color="light"></ion-icon>
+  </label>
+<input id='selecao-arquivo' type='file' (change)="uploadImage($event)">
 
-<img src="{{imagem}}" width="100%" />
-
-<ion-item>
-  <input type="file" (change)="uploadImage($event)" />
 </ion-item>
+</ion-card-content>
+  
+</ion-card>
+
+
 
 <form [formGroup]="formGroup">
   <ion-card class="background">
     <ion-card-header>
-      <ion-card-title class="ion-text-center" color="dark">Personalizar Perfil</ion-card-title>
+      <ion-card-title class="ion-text-center" color="dark">Informações de Perfil</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item id="grad">
@@ -51,7 +68,7 @@
         <ion-row>
          
           <ion-col>
-            <ion-button expand="full" color="medium" (click)="atualizar()">Próximo</ion-button>
+            <ion-button expand="block" color="medium" fill="outline" (click)="atualizar()">Próximo</ion-button>
           </ion-col>
         
         </ion-row>

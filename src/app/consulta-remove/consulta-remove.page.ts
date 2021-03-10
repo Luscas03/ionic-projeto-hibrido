@@ -41,5 +41,9 @@ export class ConsultaRemovePage implements OnInit {
 
     })
   }
+  cancelar(){
+    this.navCtrl.navigateRoot('/home');
+  
+}
 
 }

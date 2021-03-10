@@ -24,13 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-#ionmenu {
-    --ion-item-background: #000000;
-}
-ion-item {
-    color: rgb(0, 0, 0);
-}
+ #ionmenu {
+     --ion-item-background: #000000;
+ }
+ ion-item {
+     color: rgb(0, 0, 0);
+ }
 #grad {
 
     --ion-item-background: #F2EFEF;
+}
+ion-title.ios {
+    color: rgb(255, 255, 255);
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 
 import { TemplateService } from '../service/template.service';
@@ -30,15 +30,16 @@ export class PratosCadastroPage implements OnInit {
       this.pratoServ.cadastrar(this.formGroup.value).subscribe(response => {
         load.dismiss();
         this.template.myAlert(response);
+        this.navCtrl.navigateRoot(['/home']);
       })
 
     })
   }
   iniciarForm() {
     this.formGroup = this.formB.group({
-      nomeprato: [],
-      calorias: [],
-      grupo: []
+      nomeprato: ['', [Validators.required]],
+      calorias: ['', [Validators.required]],
+      grupo: ['', [Validators.required]] 
 
     })
   }
