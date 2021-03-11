@@ -4,6 +4,8 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { NavController } from '@ionic/angular';
 import { Cliente } from '../model/cliente';
 import { ClienteService } from '../service/cliente.service';
+import { TemplateService } from '../service/template.service';
+
 
 @Component({
   selector: 'app-perfil',
@@ -18,6 +20,7 @@ export class PerfilPage implements OnInit {
 
   constructor(
     private clienteServ : ClienteService,
+    private template: TemplateService,
     private auth: AngularFireAuth,
     private navCtrl: NavController,
     private fireStorage : AngularFireStorage// biblioteca para o storage firebase
@@ -58,11 +61,15 @@ atualizar(){
 downloadImage(){
   // faz o donwload da imagem na pasta perfil
   // nome da imagem é o id do usuario + jpg
+  this.template.loading.then(load => { // iniciar o carregamento
+    load.present(); // forçar inicio carremento
   this.fireStorage.storage.ref().child(`perfil/${this.uid}.jpg`).getDownloadURL().then(url=>{
+    load.dismiss();
     this.imagem = url;
   },err =>{
     this.imagem = "https://www.cob.org.br/public/painel/img/perfil.jpg"; // imagem não existe
   })
+})
 }
 
 }
