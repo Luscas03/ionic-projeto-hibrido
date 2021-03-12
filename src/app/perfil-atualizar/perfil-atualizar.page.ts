@@ -62,23 +62,43 @@ export class PerfilAtualizarPage implements OnInit {
       load.present(); // forçar inicio carremento
 
     this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).getDownloadURL().then(url=>{
-      load.dismiss();
+    
       this.imagem = url;
+    }).catch(err => {
+      load.dismiss();
+    this.template.myAlert("Erro");
+
+
+
+
+
+
     })
   })
+
   }
 
   uploadImage(event){
     this.template.loading.then(load => { // iniciar o carregamento
-      load.present(); // forçar inicio carremento
+
 
     this.imagem = event.srcElement.files[0]; // imagem do campo input type file
 
-    // faz o upload
+    load.present(); // forçar inicio carremento
     this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).put(this.imagem).then(url=>{
-      load.dismiss();
+  
       this.downloadImage();
+    }).catch(err => {
+      load.dismiss();
+    this.template.myAlert("Erro");
+
+
+
+
+
+
     })
+    
   })
   }
 
