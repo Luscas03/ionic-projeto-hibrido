@@ -43,7 +43,7 @@
     </ion-item>
    
   </ion-list>
-  <ion-button expand="block" color="medium" (click)="cadastrar()" a href="/home" fill="outline">Agendar</ion-button>
+  <ion-button expand="block" color="medium" (click)="cadastrar()" a href="/home" fill="outline" [disabled]= "formGroup.invalid">Agendar</ion-button>
   
 </ion-card-content>
 </ion-card>

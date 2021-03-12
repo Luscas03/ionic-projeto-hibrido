@@ -11,7 +11,16 @@
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label color="dark">{{ p.title }}</ion-label>
             </ion-item>
+
+
+
+
           </ion-menu-toggle>
+          <ion-item lines="none" (click)="logout()">
+        
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            <ion-label color="dark">Sair</ion-label>
+          </ion-item>
         </ion-list>
 
         

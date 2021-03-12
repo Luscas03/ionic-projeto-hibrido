@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { ConsultaService } from '../service/consulta.service';
 import { TemplateService } from '../service/template.service';
@@ -53,9 +53,9 @@ export class MarcarConsultaPage implements OnInit {
   }
   iniciarForm() {
     this.formGroup = this.formB.group({
-      tipo: [],
-      especialidade: [],
-      date: [],
+      tipo: ['', [ Validators.required ]],
+      especialidade: ['', [Validators.required]],
+      date: ['', [Validators.required]],
       idcliente: [this.idcliente]
     })
   }

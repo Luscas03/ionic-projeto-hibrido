@@ -43,7 +43,7 @@ export class PratosCadastroPage implements OnInit {
 
     })
   }
-
+ 
   
 
 }

@@ -34,12 +34,7 @@ const routes: Routes = [
     path: 'cadastrar',
     loadChildren: () => import('./cadastrar/cadastrar.module').then( m => m.CadastrarPageModule)
   },
-  {
-    path: 'sair',
-    loadChildren: () => import('./sair/sair.module').then( m => m.SairPageModule),
-    canActivate : [AngularFireAuthGuard],
-    data : { authGuardPipe : redirectToLogin}
-  },
+ 
   {
     path: 'login-recuperar',
     loadChildren: () => import('./login-recuperar/login-recuperar.module').then( m => m.LoginRecuperarPageModule)
