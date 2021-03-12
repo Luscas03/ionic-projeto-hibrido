@@ -41,7 +41,7 @@ export class PerfilAtualizarPage implements OnInit {
 
   atualizar(){
     this.clienteServ.atualizarPerfil(this.idcliente, this.formGroup.value).subscribe(response=>{
-      console.log(response);
+   
       this.navCtrl.navigateForward(['/perfil']);
     })
     

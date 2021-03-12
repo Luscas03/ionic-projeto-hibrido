@@ -30,7 +30,7 @@ prato : Prato = new Prato();
       
       this.pratoServ.buscarPorId(id).subscribe(response=>{
         this.prato = response;
-        console.log(this.prato);
+
         this.iniciarForm();
       })
 

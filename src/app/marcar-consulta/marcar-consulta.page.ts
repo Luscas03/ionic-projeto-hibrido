@@ -36,7 +36,7 @@ export class MarcarConsultaPage implements OnInit {
  
     
     let d = new Date(this.formGroup.controls['date'].value);
-    console.log(d.getDay());
+   
     
 
     this.template.loading.then(load => { // iniciar o carregamento
@@ -49,7 +49,7 @@ export class MarcarConsultaPage implements OnInit {
 
     })
 
-    console.log(this.formGroup.value)
+
   }
   iniciarForm() {
     this.formGroup = this.formB.group({
