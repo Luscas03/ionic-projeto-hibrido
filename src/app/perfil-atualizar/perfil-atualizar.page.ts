@@ -5,6 +5,7 @@ import { ClienteService } from '../service/cliente.service';
 import { TemplateService } from '../service/template.service';
 import { NavController } from '@ionic/angular';
 import { Cliente } from '../model/cliente';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-perfil-atualizar',
@@ -14,13 +15,15 @@ import { Cliente } from '../model/cliente';
 export class PerfilAtualizarPage implements OnInit {
   idcliente : string = "";
   formGroup: FormGroup;
-  cliente : Cliente = new Cliente();
+  cliente : Cliente = new Cliente(); 
+  imagem : any; // armazenado imagem / url
 
   constructor(private formB: FormBuilder,
   private template: TemplateService,
   private auth: AngularFireAuth,
   private navCtrl: NavController,
-  private clienteServ : ClienteService
+  private clienteServ : ClienteService,
+  private fireStorage : AngularFireStorage
   ) {
     this.iniciarForm();
     this.auth.authState.subscribe(response=>{
@@ -28,6 +31,7 @@ export class PerfilAtualizarPage implements OnInit {
       this.clienteServ.obterPerfil(this.idcliente).subscribe(response=>{
         this.cliente = response;
         this.iniciarForm();
+        this.downloadImage();
       })
     })
   }
@@ -51,5 +55,32 @@ export class PerfilAtualizarPage implements OnInit {
       telefone: [this.cliente.telefone]
     })
   }
+
+  downloadImage(){
+    // template load
+    this.template.loading.then(load => { // iniciar o carregamento
+      load.present(); // forçar inicio carremento
+
+    this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).getDownloadURL().then(url=>{
+      load.dismiss();
+      this.imagem = url;
+    })
+  })
+  }
+
+  uploadImage(event){
+    this.template.loading.then(load => { // iniciar o carregamento
+      load.present(); // forçar inicio carremento
+
+    this.imagem = event.srcElement.files[0]; // imagem do campo input type file
+
+    // faz o upload
+    this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).put(this.imagem).then(url=>{
+      load.dismiss();
+      this.downloadImage();
+    })
+  })
+  }
+
 
 }

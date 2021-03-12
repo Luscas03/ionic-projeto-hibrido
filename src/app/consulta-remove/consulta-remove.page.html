@@ -1,25 +1,36 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      
     </ion-buttons>
-    <ion-title>Excluir Consulta</ion-title>
+    <ion-title class="ion-text-center">Excluir Consulta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card class="background">
-    <ion-card-content>
-      <ion-text class="cinza">
-        <h2>Deseja realmente fazer exclusão da Consulta:</h2>
-        {{consulta.tipo}} 
-        {{consulta.especialidade}}
-        {{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}
-        </ion-text>
+   <ion-card>
+    <ion-card-header>
+      <ion-card-title color="dark">Você Realmente Deseja Desmarcar a Consulta de "{{consulta.especialidade}}"?</ion-card-title>
+      <ion-card-subtitle color="dark">Após desmarcar, os dados não poderão ser recuperados.</ion-card-subtitle>
 
-  </ion-card-content>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <ion-button fill="outline" shape="round" (click)="excluir()"color="success">Sim</ion-button>
+           
+          </ion-col>
+          <ion-col>
+            <ion-button  fill="outline" shape="round"  (click)="cancelar()"color="danger">Não</ion-button>
+          </ion-col>
+        
+        </ion-row>
+        </ion-grid>
+    </ion-card-content>
   </ion-card>
 
-  <ion-button color="danger" expand="full" (click)="excluir()">Excluir</ion-button>
+
 </ion-content>
