@@ -84,7 +84,15 @@ const routes: Routes = [
   {
     path: 'prato-visualizar/:id',
     loadChildren: () => import('./prato-visualizar/prato-visualizar.module').then( m => m.PratoVisualizarPageModule)
-  }
+  },
+  {
+    path: 'prato-remove/:id',
+    loadChildren: () => import('./prato-remove/prato-remove.module').then( m => m.PratoRemovePageModule)
+  },
+
+
+
+
 ];
 
 @NgModule({

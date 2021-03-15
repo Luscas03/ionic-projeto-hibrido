@@ -34,7 +34,7 @@ export class PratoVisualizarPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(idUrl => {
       this.idprato = idUrl.get('id');
-      
+      this.downloadImage();
 
       this.pratoServ.buscarPorId(this.idprato).subscribe(response => {
         this.prato = response;
@@ -51,6 +51,36 @@ export class PratoVisualizarPage implements OnInit {
       nomeprato: [this.prato.nomeprato],
       calorias: [this.prato.calorias],
       grupo: [this.prato.grupo],
+
+    })
+  }
+  remover() {
+    this.navCtrl.navigateForward(['/prato-remove', this.prato.id]);
+  }
+
+  downloadImage() {
+    // template load
+    this.template.loading.then(load => { // iniciar o carregamento
+      load.present(); // forçar inicio carremento
+      this.fireStorage.storage.ref().child(`perfil/${this.idprato}.jpg`).getDownloadURL().then(url => {
+        this.imagem = url;
+      }).catch(err => {
+        load.dismiss(); 
+        this.imagem = "https://www.strokejoinville.com.br/wp-content/uploads/sites/804/2017/05/produto-sem-imagem-Copia-1.gif";
+      })
+    })
+  }
+
+  uploadImage(event) {
+    this.template.loading.then(load => { // iniciar o carregamento
+      this.imagem = event.srcElement.files[0]; // imagem do campo input type file
+      load.present(); // forçar inicio carremento
+      this.fireStorage.storage.ref().child(`perfil/${this.idprato}.jpg`).put(this.imagem).then(url => {
+        this.downloadImage();
+      }).catch(err => {
+        load.dismiss();
+        this.template.myAlert("Erro");
+      })
 
     })
   }
