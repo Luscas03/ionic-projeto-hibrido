@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SairPageRoutingModule } from './sair-routing.module';
+import { PratoRemovePageRoutingModule } from './prato-remove-routing.module';
 
-import { SairPage } from './sair.page';
+import { PratoRemovePage } from './prato-remove.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SairPageRoutingModule
+    PratoRemovePageRoutingModule
   ],
-  declarations: [SairPage]
+  declarations: [PratoRemovePage]
 })
-export class SairPageModule {}
+export class PratoRemovePageModule {}

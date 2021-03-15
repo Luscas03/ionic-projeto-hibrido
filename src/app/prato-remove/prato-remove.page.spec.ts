@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SairPage } from './sair.page';
+import { PratoRemovePage } from './prato-remove.page';
 
-describe('SairPage', () => {
-  let component: SairPage;
-  let fixture: ComponentFixture<SairPage>;
+describe('PratoRemovePage', () => {
+  let component: PratoRemovePage;
+  let fixture: ComponentFixture<PratoRemovePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SairPage ],
+      declarations: [ PratoRemovePage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SairPage);
+    fixture = TestBed.createComponent(PratoRemovePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
