@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      
+    </ion-buttons>
+    <ion-title class="ion-text-center">Excluir Consulta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <ion-card>
+    <ion-card-header>
+      <ion-card-title color="dark">Você Realmente Deseja Desmarcar a Consulta de "{{consulta.especialidade}}"?</ion-card-title>
+      <ion-card-subtitle color="dark">Após desmarcar, os dados não poderão ser recuperados.</ion-card-subtitle>
+
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <ion-button fill="outline" shape="round" (click)="excluir()"color="success">Sim</ion-button>
+           
+          </ion-col>
+          <ion-col>
+            <ion-button  fill="outline" shape="round"  (click)="cancelar()"color="danger">Não</ion-button>
+          </ion-col>
+        
+        </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

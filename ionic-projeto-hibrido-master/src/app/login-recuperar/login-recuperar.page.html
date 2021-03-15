@@ -1,0 +1,67 @@
+
+<ion-header>
+ 
+</ion-header>
+
+ 
+
+<ion-content>
+
+    
+  <form [formGroup]="formGroup">
+  <ion-list lines="full" class="ion-no-margin">
+   
+  
+    
+    
+    
+
+
+    <ion-card id="grad">
+      <ion-card-content>
+        
+        <h1 class="ion-text-center">Recuperar Conta</h1>
+    <ion-item >
+
+      <ion-label position="floating">E-mail</ion-label>
+
+      <ion-input type="email" formControlName="username"></ion-input>
+     
+
+    </ion-item>
+
+   
+    <ion-grid class="ion-text-center">
+
+      <ion-row>
+        <ion-col>
+          <ion-button color="medium" expand="block" (click)="cancelar()">Cancelar
+          </ion-button> 
+        </ion-col>
+        <ion-col>
+          <div>    <ion-button color="medium" expand="block" (click)="recuperar()" [disabled]="formGroup.invalid"> Recuperar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+  
+  </ion-grid>
+    
+    <div> 
+         <ion-label color="danger">
+
+      <p class="ion-text-center" *ngIf="formGroup.controls.username.errors && formGroup.controls.username.dirty">*E-mail Inválido</p>
+
+    </ion-label> 
+    <ion-label color="danger">
+
+    </ion-label>  
+  </div>
+  </ion-card-content>
+</ion-card>
+
+  </ion-list>
+
+  
+</form>
+</ion-content>

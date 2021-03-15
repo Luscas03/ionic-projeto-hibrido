@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        <ion-title class="ion-text-center">Cadastre seu Prato</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="formGroup">
+    <ion-card>
+        <ion-card-content> 
+
+  
+    <ion-item id="grad">
+        <ion-label position="floating">Nome do prato</ion-label>
+        <ion-input formControlName="nomeprato"></ion-input>
+    </ion-item>
+
+    <ion-item id="grad">
+        <ion-label position="floating">Calorias</ion-label>
+        <ion-input formControlName="calorias"></ion-input>
+    </ion-item>
+
+    <ion-item id="grad">
+        <ion-label>Grupo</ion-label>
+        <ion-select value="notifications" interface="action-sheet" formControlName="grupo">
+          <ion-select-option value="Grãos">Grãos</ion-select-option>
+          <ion-select-option value="Carnes">Carnes</ion-select-option>
+          <ion-select-option value="Bebidas">Bebidas</ion-select-option> 
+          <ion-select-option value="Verduras">Verduras</ion-select-option>
+          <ion-select-option value="Hortaliças">Hortaliças</ion-select-option>
+          <ion-select-option value="Outros">Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+    <ion-button expand="block" color="medium" (click)="cadastrar()" fill="outline"  [disabled]= "formGroup.invalid">Cadastrar</ion-button>
+</ion-card-content>
+</ion-card>
+</form>
+</ion-content> 

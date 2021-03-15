@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Risso Saúde Integrada</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" color="dark">Últimas Consultas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    <ion-list >
+      <ion-item *ngFor= "let consulta of lista">
+       
+        <ion-label>
+          <ion-text color="light">
+          <p>{{consulta.tipo}}</p>
+  
+          <p>{{consulta.especialidade}}</p>
+          <p>{{consulta.date | date: 'dd/MM/yyyy'}} {{consulta.date | date: 'hh:mm'}}</p>
+            </ion-text>
+        </ion-label>
+        <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizar(consulta)"></ion-icon></ion-avatar>
+
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+  </ion-card> 
+  
+  
+  <ion-card>
+  <ion-card-header>
+    <ion-card-title class="ion-text-center" color="dark">Pratos Recomendados</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  <ion-list>
+
+    <ion-item *ngFor= "let prato of listap">
+     
+      <ion-label>
+        <ion-text color="light">
+          <h2>{{prato.nomeprato}}</h2>
+        </ion-text>
+        <ion-text color="light">
+        <p> Calorias : <ion-text color="primary"><i color="success">{{prato.calorias}}</i></ion-text></p>
+
+        <p> Categoria : <ion-text color="primary"><i color="success">{{prato.grupo}}</i></ion-text></p>
+      </ion-text>
+      </ion-label>
+      <ion-avatar slot="end"><ion-icon size="large" name="arrow-redo-circle-outline" (click)="visualizarP(prato)"></ion-icon></ion-avatar>
+
+    </ion-item>
+  </ion-list>
+</ion-card-content>
+</ion-card>
+</ion-content>

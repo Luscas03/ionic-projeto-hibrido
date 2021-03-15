@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ion-text-center">Visualizar Prato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form [formGroup]="formGroup">
+  <ion-card id="grad">
+      <ion-card-content> 
+
+
+  <ion-item>
+      <ion-label position="floating">Nome do prato</ion-label>
+      <ion-input formControlName="nomeprato" disabled="true"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating">Calorias</ion-label>
+      <ion-input formControlName="calorias" disabled="true"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Grupo</ion-label>
+      <ion-select value="notifications" interface="action-sheet" formControlName="grupo" disabled="true">
+        <ion-select-option value="graos">Grãos</ion-select-option>
+        <ion-select-option value="carnes">Carnes</ion-select-option>
+        <ion-select-option value="bebidas">Bebidas</ion-select-option>
+        <ion-select-option value="verduras">Verduras</ion-select-option>
+        <ion-select-option value="hortalicaas">Hortaliças</ion-select-option>
+      </ion-select>
+    </ion-item>
+  <ion-button expand="block" color="danger" (click)="remover()" fill="outline">Excluir</ion-button>
+</ion-card-content>
+
+<div class="ion-text-center">
+  <img src="{{imagem}}" />
+</div>
+
+<ion-item id="grad">
+  <!-- <input id="teste" type="file" (change)="uploadImage($event)" /> -->
+
+  <label for='selecao-arquivo'>
+    <ion-icon name="camera" id="att" color="dark"></ion-icon>
+
+  </label>
+  <input id='selecao-arquivo' type='file' (change)="uploadImage($event)">
+
+</ion-item>
+
+</ion-card>
+</form>
+</ion-content> 
