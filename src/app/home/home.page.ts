@@ -30,6 +30,7 @@ listap : Prato[] = [];
   ngOnInit() {
     this.pratoServ.listaDePrato().subscribe(response=> {
       this.listap = response;
+   
     })
   
   }

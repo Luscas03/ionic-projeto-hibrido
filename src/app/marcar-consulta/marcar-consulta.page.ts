@@ -42,6 +42,7 @@ export class MarcarConsultaPage implements OnInit {
     this.template.loading.then(load => { // iniciar o carregamento
       load.present(); // forçar inicio carremento
       this.consultaServ.cadastrar(this.formGroup.value).subscribe(response => {
+       this.navCtrl.navigateForward('/home');
         load.dismiss();
         this.template.myAlert(response);
         

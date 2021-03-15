@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -43,12 +44,6 @@ export class AppComponent implements OnInit {
       title: 'Serviços',
       url: '/servicos-user',
       icon: 'accessibility'
-    },
-    {
-
-      title: 'Cadastro de Pratos',
-      url: '/pratos-cadastro',
-      icon: 'nutrition'
     }
 
   ];
@@ -59,7 +54,8 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private navCtrl: NavController,
     private menuCtrl: MenuController,
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+
   ) {
     this.initializeApp();
   }

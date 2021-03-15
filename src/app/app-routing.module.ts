@@ -65,10 +65,7 @@ const routes: Routes = [
     path: 'dieta-low-carb',
     loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
   },
-  {
-    path: 'pratos-cadastro',
-    loadChildren: () => import('./pratos-cadastro/pratos-cadastro.module').then( m => m.PratosCadastroPageModule)
-  },
+ 
   {
     path: 'perfil-atualizar',
     loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule)
