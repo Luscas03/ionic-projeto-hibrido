@@ -36,10 +36,12 @@ listap : Prato[] = [];
 
   ionViewWillEnter(){
     this.auth.authState.subscribe(response=>{ // dados usuário logado
+      if(response!== null){
       this.consultaServ.listaDeConsultas(response.uid).subscribe(response => {
         this.lista = response;
-        console.log(this.listap)
+    
       })
+    }
     })
   }
 

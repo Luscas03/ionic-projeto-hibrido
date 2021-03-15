@@ -13,22 +13,23 @@ import { AngularFireStorage } from '@angular/fire/storage';
   styleUrls: ['./perfil-atualizar.page.scss'],
 })
 export class PerfilAtualizarPage implements OnInit {
-  idcliente : string = "";
+  idcliente: string = "";
   formGroup: FormGroup;
-  cliente : Cliente = new Cliente(); 
-  imagem : any; // armazenado imagem / url
+  cliente: Cliente = new Cliente();
+  imagem: any; // armazenado imagem / url
 
   constructor(private formB: FormBuilder,
-  private template: TemplateService,
-  private auth: AngularFireAuth,
-  private navCtrl: NavController,
-  private clienteServ : ClienteService,
-  private fireStorage : AngularFireStorage
+    private template: TemplateService,
+    private auth: AngularFireAuth,
+    private navCtrl: NavController,
+    private clienteServ: ClienteService,
+    private fireStorage: AngularFireStorage
   ) {
     this.iniciarForm();
-    this.auth.authState.subscribe(response=>{
+
+    this.auth.authState.subscribe(response => {
       this.idcliente = response.uid;
-      this.clienteServ.obterPerfil(this.idcliente).subscribe(response=>{
+      this.clienteServ.obterPerfil(this.idcliente).subscribe(response => {
         this.cliente = response;
         this.iniciarForm();
         this.downloadImage();
@@ -39,12 +40,14 @@ export class PerfilAtualizarPage implements OnInit {
   ngOnInit() {
   }
 
-  atualizar(){
-    this.clienteServ.atualizarPerfil(this.idcliente, this.formGroup.value).subscribe(response=>{
-      console.log(response);
-      this.navCtrl.navigateForward(['/perfil']);
-    })
-    
+  atualizar() {
+    this.template.loading.then(load => { 
+      load.present();
+      this.clienteServ.atualizarPerfil(this.idcliente, this.formGroup.value).subscribe(response => {
+        load.dismiss();
+        this.navCtrl.navigateRoot(['/perfil']);
+      })
+  })
   }
 
   iniciarForm() {
@@ -56,30 +59,31 @@ export class PerfilAtualizarPage implements OnInit {
     })
   }
 
-  downloadImage(){
+  downloadImage() {
     // template load
     this.template.loading.then(load => { // iniciar o carregamento
       load.present(); // forçar inicio carremento
-
-    this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).getDownloadURL().then(url=>{
-      load.dismiss();
-      this.imagem = url;
+      this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).getDownloadURL().then(url => {
+        this.imagem = url;
+      }).catch(err => {
+        load.dismiss();
+        this.template.myAlert("Erro");
+      })
     })
-  })
   }
 
-  uploadImage(event){
+  uploadImage(event) {
     this.template.loading.then(load => { // iniciar o carregamento
+      this.imagem = event.srcElement.files[0]; // imagem do campo input type file
       load.present(); // forçar inicio carremento
+      this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).put(this.imagem).then(url => {
+        this.downloadImage();
+      }).catch(err => {
+        load.dismiss();
+        this.template.myAlert("Erro");
+      })
 
-    this.imagem = event.srcElement.files[0]; // imagem do campo input type file
-
-    // faz o upload
-    this.fireStorage.storage.ref().child(`perfil/${this.idcliente}.jpg`).put(this.imagem).then(url=>{
-      load.dismiss();
-      this.downloadImage();
     })
-  })
   }
 
 

@@ -24,7 +24,7 @@ export class ConsultaRemovePage implements OnInit {
       let id = idUrl.get('id');
       this.consultaServ.buscarPorId(id).subscribe(response => {
         this.consulta = response;
-        console.log(this.consulta)
+        
       })
     })
   }

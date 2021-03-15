@@ -28,10 +28,10 @@ export class PerfilPage implements OnInit {
 
       this.auth.authState.subscribe(response=>{
         this.uid = response.uid;
-        console.log(response.uid);
+      
 
         this.clienteServ.obterPerfil(this.uid).subscribe(response=>{
-          console.log(response);
+       
           if(response==null){
             //perfil não existe
             this.navCtrl.navigateRoot('\perfil-atualizar'); // Página formulário para criar o perfil, trocar pela home
@@ -45,7 +45,7 @@ export class PerfilPage implements OnInit {
           }
 
         },err=>{
-          console.log("Erro");
+       
         })
       })
   }

@@ -29,7 +29,7 @@ export class ConsultaVisualizarPage implements OnInit {
       
       this.consultaServ.buscarPorId(id).subscribe(response=>{
         this.consulta = response;
-        console.log(this.consulta);
+    
         this.iniciarForm();
       })
  

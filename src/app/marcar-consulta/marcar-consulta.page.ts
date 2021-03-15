@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { ConsultaService } from '../service/consulta.service';
 import { TemplateService } from '../service/template.service';
@@ -36,7 +36,7 @@ export class MarcarConsultaPage implements OnInit {
  
     
     let d = new Date(this.formGroup.controls['date'].value);
-    console.log(d.getDay());
+   
     
 
     this.template.loading.then(load => { // iniciar o carregamento
@@ -49,13 +49,13 @@ export class MarcarConsultaPage implements OnInit {
 
     })
 
-    console.log(this.formGroup.value)
+
   }
   iniciarForm() {
     this.formGroup = this.formB.group({
-      tipo: [],
-      especialidade: [],
-      date: [],
+      tipo: ['', [ Validators.required ]],
+      especialidade: ['', [Validators.required]],
+      date: ['', [Validators.required]],
       idcliente: [this.idcliente]
     })
   }
