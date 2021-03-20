@@ -43,48 +43,70 @@ const routes: Routes = [
 
   {
     path: 'marcar-consulta',
-    loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
+    loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'dietas-servicos',
-    loadChildren: () => import('./dietas-servicos/dietas-servicos.module').then( m => m.DietasServicosPageModule)
+    loadChildren: () => import('./dietas-servicos/dietas-servicos.module').then( m => m.DietasServicosPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'dieta-user',
-    loadChildren: () => import('./dieta-user/dieta-user.module').then( m => m.DietaUserPageModule)
+    loadChildren: () => import('./dieta-user/dieta-user.module').then( m => m.DietaUserPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'servicos-user',
-    loadChildren: () => import('./servicos-user/servicos-user.module').then( m => m.ServicosUserPageModule)
+    loadChildren: () => import('./servicos-user/servicos-user.module').then( m => m.ServicosUserPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'dieta-cetogenica',
-    loadChildren: () => import('./dieta-cetogenica/dieta-cetogenica.module').then( m => m.DietaCetogenicaPageModule)
+    loadChildren: () => import('./dieta-cetogenica/dieta-cetogenica.module').then( m => m.DietaCetogenicaPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'dieta-low-carb',
-    loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule)
+    loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
  
   {
     path: 'perfil-atualizar',
-    loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule)
+    loadChildren: () => import('./perfil-atualizar/perfil-atualizar.module').then( m => m.PerfilAtualizarPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'consulta-visualizar/:id',
-    loadChildren: () => import('./consulta-visualizar/consulta-visualizar.module').then( m => m.ConsultaVisualizarPageModule)
+    loadChildren: () => import('./consulta-visualizar/consulta-visualizar.module').then( m => m.ConsultaVisualizarPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'consulta-remove/:id',
-    loadChildren: () => import('./consulta-remove/consulta-remove.module').then( m => m.ConsultaRemovePageModule)
+    loadChildren: () => import('./consulta-remove/consulta-remove.module').then( m => m.ConsultaRemovePageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'prato-visualizar/:id',
-    loadChildren: () => import('./prato-visualizar/prato-visualizar.module').then( m => m.PratoVisualizarPageModule)
+    loadChildren: () => import('./prato-visualizar/prato-visualizar.module').then( m => m.PratoVisualizarPageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
   {
     path: 'prato-remove/:id',
-    loadChildren: () => import('./prato-remove/prato-remove.module').then( m => m.PratoRemovePageModule)
+    loadChildren: () => import('./prato-remove/prato-remove.module').then( m => m.PratoRemovePageModule),
+    canActivate : [AngularFireAuthGuard],
+    data : { authGuardPipe : redirectToLogin}
   },
 
 
