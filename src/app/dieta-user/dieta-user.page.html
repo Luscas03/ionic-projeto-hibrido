@@ -24,14 +24,16 @@
   </ion-card-header>
 
       <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor= "let dieta of listad">
         <div id="buttons">
-    <ion-button expand="block" fill="outline" color="medium"  (click)="cetogenica()">Cetogênica
+    <ion-button expand="block" fill="outline" color="medium"   (click)="visualizar(dieta)">{{dieta.nome}}
     </ion-button>
  
-    <ion-button expand="block" color="medium" fill="outline" (click)="lc()">Low Carb
-    </ion-button>
+   
   </div>
-
+</ion-item>
+</ion-list>
   </ion-card-content>
 
 </ion-card>

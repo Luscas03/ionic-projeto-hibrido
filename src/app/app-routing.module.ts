@@ -65,18 +65,6 @@ const routes: Routes = [
     canActivate : [AngularFireAuthGuard],
     data : { authGuardPipe : redirectToLogin}
   },
-  {
-    path: 'dieta-cetogenica',
-    loadChildren: () => import('./dieta-cetogenica/dieta-cetogenica.module').then( m => m.DietaCetogenicaPageModule),
-    canActivate : [AngularFireAuthGuard],
-    data : { authGuardPipe : redirectToLogin}
-  },
-  {
-    path: 'dieta-low-carb',
-    loadChildren: () => import('./dieta-low-carb/dieta-low-carb.module').then( m => m.DietaLowCarbPageModule),
-    canActivate : [AngularFireAuthGuard],
-    data : { authGuardPipe : redirectToLogin}
-  },
  
   {
     path: 'perfil-atualizar',
@@ -108,7 +96,10 @@ const routes: Routes = [
     canActivate : [AngularFireAuthGuard],
     data : { authGuardPipe : redirectToLogin}
   },
-
+  {
+    path: 'dieta-visualizar/:id',
+    loadChildren: () => import('./dieta-visualizar/dieta-visualizar.module').then( m => m.DietaVisualizarPageModule)
+  },
 
 
 

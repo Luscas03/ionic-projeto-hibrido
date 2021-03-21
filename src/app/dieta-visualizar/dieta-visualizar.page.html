@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-toolbar>
+      <ion-buttons slot="start">
+
+        <ion-back-button></ion-back-button>
+
+      </ion-buttons>
+    
+
+    <ion-title class="ion-text-center">Visualizar Dieta</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup">
+<ion-card id="grad">
+  <ion-card-header>
+
+      <ion-card-title class="ion-text-center" color="dark">{{dieta.nome}}</ion-card-title>
+    
+  </ion-card-header>
+  <ion-card-content>
+    
+<ion-text color="danger">
+  <div class="text">
+  <p >{{dieta.descricao}}</p>
+</div>
+</ion-text>
+
+  </ion-card-content>
+</ion-card>
+</form>
+</ion-content>

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { MenuController, NavController } from '@ionic/angular';
+import { Dieta } from '../model/dieta';
+import { DietasService } from '../service/dietas.service';
+
+
 
 @Component({
   selector: 'app-dieta-user',
@@ -7,15 +12,21 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./dieta-user.page.scss'],
 })
 export class DietaUserPage implements OnInit {
-
-  constructor(private navCtrl : NavController) { }
+  listad : Dieta[] = [];
+  constructor(private navCtrl : NavController,
+    private menuCtrl : MenuController,
+    private dietasServ : DietasService,
+  
+    private auth : AngularFireAuth,
+   ) { }
 
   ngOnInit() {
+    this.dietasServ.listaDeDietas().subscribe(response=> {
+      this.listad = response;
+    })
   }
-  cetogenica() {
-    this.navCtrl.navigateForward(['/dieta-cetogenica']);
-  }
-  lc() {
-    this.navCtrl.navigateForward(['/dieta-low-carb']);
+ 
+  visualizar(dieta){
+    this.navCtrl.navigateForward(['/dieta-visualizar',dieta.id]);
   }
 }

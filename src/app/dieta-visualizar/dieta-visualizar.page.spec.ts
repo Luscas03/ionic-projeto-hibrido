@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { DietaLowCarbPage } from './dieta-low-carb.page';
+import { DietaVisualizarPage } from './dieta-visualizar.page';
 
-describe('DietaLowCarbPage', () => {
-  let component: DietaLowCarbPage;
-  let fixture: ComponentFixture<DietaLowCarbPage>;
+describe('DietaVisualizarPage', () => {
+  let component: DietaVisualizarPage;
+  let fixture: ComponentFixture<DietaVisualizarPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DietaLowCarbPage ],
+      declarations: [ DietaVisualizarPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DietaLowCarbPage);
+    fixture = TestBed.createComponent(DietaVisualizarPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
