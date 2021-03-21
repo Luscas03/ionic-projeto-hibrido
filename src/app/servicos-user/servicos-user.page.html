@@ -9,7 +9,7 @@
 </ion-header>
 <ion-content fullscreen class="ion-padding">
    
-  <ion-card>
+  <ion-card id="grad">
     <ion-card-header>
       <ion-card-title class="ion-text-center" color="dark">Lista de Nossos Serviços:</ion-card-title>
 
@@ -17,12 +17,9 @@
 
     </ion-card-header>
     <ion-card-content>
-      <ion-text color="light">
-        <h3> • Soroterapia</h3>
-    <h3> • Intramuscular</h3>
-      <h3> • Implantes Hormonais</h3>
-    <h3> • Mesoterapia</h3>
-      <h3> • Tratamentos Estéticos</h3>
-  </ion-text>
+      <ion-item *ngFor= "let servico of listas">
+        • {{servico.nome}}
+
+      </ion-item>
     </ion-card-content>
   </ion-card>
