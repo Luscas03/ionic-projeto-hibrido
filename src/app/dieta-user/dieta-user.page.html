@@ -26,12 +26,15 @@
       <ion-card-content>
         <ion-list>
           <ion-item *ngFor= "let dieta of listad">
-        <div id="buttons">
-    <ion-button expand="block" fill="outline" color="medium"   (click)="visualizar(dieta)">{{dieta.nome}}
-    </ion-button>
+        <div id="buttons"  (click)="visualizar(dieta)">
+          {{dieta.nome}}
+
+        </div>
+    <!-- <ion-button expand="block" fill="outline" color="medium"   (click)="visualizar(dieta)">{{dieta.nome}}
+    </ion-button> -->
  
    
-  </div>
+
 </ion-item>
 </ion-list>
   </ion-card-content>

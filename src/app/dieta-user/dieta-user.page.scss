@@ -14,6 +14,16 @@ ion-list {
 }
 
 #buttons {
-    padding: 3%;
+    display: flex;
+  background-color: #846bff;
+  border-radius: 3px;
+  border: 2px solid #846bff;
+  background-color: transparent;
+  width: 100%;
+  height: 40px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  color: #846bff;
 }
  
